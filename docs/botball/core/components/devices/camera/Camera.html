@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.6.3" />
+<title>botball.core.components.devices.camera.Camera API documentation</title>
+<meta name="description" content="" />
+<link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css' rel='stylesheet'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+<style>.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{font-weight:bold}#index h4 + ul{margin-bottom:.6em}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase;cursor:pointer}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>botball.core.components.devices.camera.Camera</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">import libwallaby
+from typing import Union, Optional
+from .CameraTrackingColor import CameraTrackingColor
+from .Rectangle import Rectangle
+
+
+class Camera(object):
+    &#34;&#34;&#34;
+    Represents a USB camera connected to the robot.
+    &#34;&#34;&#34;
+
+    _tracking_color: CameraTrackingColor
+
+    @property
+    def tracking_color(self) -&gt; CameraTrackingColor:
+        &#34;&#34;&#34; 
+        The current color of which objects the camera will track.
+
+        Setting this value to a different color will trigger a camera update and
+        may block the thread briefly.
+        &#34;&#34;&#34;
+        return self._tracking_color
+
+    @tracking_color.setter
+    def tracking_color(self, value: CameraTrackingColor):
+        if type(value) is str:
+            self._tracking_color = CameraTrackingColor(value)
+        else:
+            self._tracking_color = value
+
+        self._change_color_to(self._tracking_color)
+        self.refresh()
+
+    def __init__(self, tracking_color: Union[CameraTrackingColor, str]):
+        &#34;&#34;&#34; 
+        Initializes the camera with a tracking color. The camera should only be 
+        used inside a `with` statement; for example:
+
+        &gt;&gt;&gt; with Camera(tracking_color=&#34;red&#34;) as camera:
+                print(camera.number_of_objects())
+
+        - `tracking_color`: This can either be a CameraTrackingColor or a
+        string representing a CameraTrackingColor, which will be
+        automatically converted.
+
+        - **Warning:** If the camera is not connected to the robot, then the
+        program will crash as defined in `libwallaby`.
+        &#34;&#34;&#34;
+        self.tracking_color = tracking_color
+
+    def __enter__(self):
+        libwallaby.camera_open()
+        self._change_color_to(self._tracking_color)
+        self.refresh()
+
+    def __exit__(self, exception_type, exception_value, traceback):
+        libwallaby.camera_close()
+
+    # - Refreshing camera
+
+    def refresh(self, frames: Optional[int] = None):
+        &#34;&#34;&#34;
+        Refreshes the camera by collecting the number of frames specified in
+        `Camera.number_of_updates_during_refresh` to make the object tracking
+        more accurate. Blocks the thread until finished.
+
+        You shouldn&#39;t normally need to call this method yourself; it is called
+        automatically during initialization and when the camera&#39;s tracking color
+        is changed.
+
+        - `frames`: If provided, this number of frames will be fetched instead.
+        &#34;&#34;&#34;
+        number_of_times = frames or self.number_of_updates_during_refresh
+
+        for _ in range(number_of_times):
+            libwallaby.camera_update()
+
+    # - Constants
+
+    camera_channel: int = 0
+    &#34;&#34;&#34;
+    The camera channel on which to check for objects. This shouldn&#39;t need to 
+    be changed if you use the provided configuration files.
+
+    If this value is inaccurate for your robot, you can change it. Do so as
+    early in your program as possible (eg. before you create/initialize any
+    components.)
+    &#34;&#34;&#34;
+
+    object_confidence_threshold: float = 0.42
+    &#34;&#34;&#34;
+    The minimum value returned by `libwallaby`&#39;s `get_object_confidence()` for 
+    an object to be recognized as &#34;trackable&#34;.
+
+    If this value is inaccurate for your robot, you can change it. Do so as
+    early in your program as possible (eg. before you create/initialize any
+    components.)
+    &#34;&#34;&#34;
+
+    number_of_updates_during_refresh: int = 20
+    &#34;&#34;&#34;
+    The number of frames the camera should fetch during a refresh (eg. during
+    initialization or a change in the active tracking color) before tracking
+    objects in the output. The higher the number, the more accurate object
+    tracking will be, but the longer it will take for refreshes to occur.
+
+    If this value is inaccurate for your robot, you can change it. Do so as
+    early in your program as possible (eg. before you create/initialize any
+    components.)
+    &#34;&#34;&#34;
+
+    camera_height_offset: int = 15
+    &#34;&#34;&#34;
+    The number of pixels to offset the camera boundaries to make object tracking
+    more accurate.
+
+    If this value is inaccurate for your robot, you can change it. Do so as
+    early in your program as possible (eg. before you create/initialize any
+    components.)
+    &#34;&#34;&#34;
+
+    # - Changing color 
+
+    def _change_color_to(self, tracking_color: CameraTrackingColor):
+        # The name of the configuration file to get the tracking info from. The 
+        # .conf extension should NOT be provided.
+        conf_name = f&#34;detect-{str(tracking_color)}&#34;
+
+        success = libwallaby.camera_load_config(conf_name) == 1
+
+        if not success:
+            raise EnvironmentError(f&#34;Error while loading tracking color \
+configuration file for color &#39;{str(tracking_color)}&#39;&#34;)
+
+    # - Object presence
+
+    def number_of_objects(self) -&gt; int:
+        &#34;&#34;&#34;
+        The number of objects currently in the field of view.
+        &#34;&#34;&#34;
+        return libwallaby.get_object_count(self.camera_channel)
+
+    def object_is_present(self) -&gt; bool:
+        &#34;&#34;&#34;
+        Whether an object of the current tracking color is present in the field 
+        of view.
+        &#34;&#34;&#34;
+        return self.number_of_objects() &gt;= 1
+
+    # - Bounding box
+
+    def object_bbox(self, object_number: int = 0) -&gt; Optional[Rectangle]:
+        &#34;&#34;&#34;
+        Returns the bounding box for an object in the field of view, or `None`
+        if the object is not found.
+        &#34;&#34;&#34;
+        if self.number_of_objects() &lt;= object_number:
+            return None
+
+        return libwallaby.get_object_bbox(self.camera_channel, object_number)
+
+    # - Distance
+
+    def distance_to_object(self, object_number: int = 0, object_height: float = 0) -&gt; Optional[float]:
+        &#34;&#34;&#34;
+        Returns the distance to an object in the field of view, or `None` if the
+        object is not found.
+
+        - `object_height`: The height of the object in question in mm. This should
+        be a known value based on the real-world measurement of the object
+        for accurate results.
+        &#34;&#34;&#34;
+        if self.number_of_objects() &lt;= object_number:
+            return None
+
+        object_bbox = self.object_bbox(object_number)
+        if object_bbox is None:
+            return None
+
+        object_height_px = float(object_bbox.height)
+        camera_height = float(libwallaby.get_camera_height()
+                              - self.camera_height_offset)
+
+        return camera_height * object_height / object_height_px
+
+    # - Confidence
+
+    def confidence_of_object(self, object_number: int = 0) -&gt; Optional[float]:
+        &#34;&#34;&#34;
+        Returns the confidence that the object is in the field of view, or
+        `None` if the object is not found at all.
+        &#34;&#34;&#34;
+
+        if self.number_of_objects() &lt;= object_number:
+            return None
+
+        return libwallaby.get_object_confidence(
+            self.camera_channel,
+            object_number
+        )
+
+    # - Trackability
+
+    def object_is_trackable(self, object_number: int = 0) -&gt; Optional[bool]:
+        &#34;&#34;&#34;
+        Returns whether an object is considered to be close enough to the camera
+        to be trackable, or `None` if the object is not found.
+        &#34;&#34;&#34;
+
+        if self.number_of_objects() &lt;= object_number:
+            return None
+
+        confidence = self.confidence_of_object(object_number)
+        if confidence is None:
+            return None
+
+        return confidence &gt; self.object_confidence_threshold</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="botball.core.components.devices.camera.Camera.Camera"><code class="flex name class">
+<span>class <span class="ident">Camera</span></span>
+<span>(</span><span>tracking_color: Union[<a title="botball.core.components.devices.camera.CameraTrackingColor.CameraTrackingColor" href="CameraTrackingColor.html#botball.core.components.devices.camera.CameraTrackingColor.CameraTrackingColor">CameraTrackingColor</a>, str])</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Represents a USB camera connected to the robot.</p>
+<p>Initializes the camera with a tracking color. The camera should only be
+used inside a <code>with</code> statement; for example:</p>
+<pre><code>&gt;&gt;&gt; with Camera(tracking_color="red") as camera:
+        print(camera.number_of_objects())
+</code></pre>
+<ul>
+<li>
+<p><code>tracking_color</code>: This can either be a CameraTrackingColor or a
+string representing a CameraTrackingColor, which will be
+automatically converted.</p>
+</li>
+<li>
+<p><strong>Warning:</strong> If the camera is not connected to the robot, then the
+program will crash as defined in <code>libwallaby</code>.</p>
+</li>
+</ul></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">class Camera(object):
+    &#34;&#34;&#34;
+    Represents a USB camera connected to the robot.
+    &#34;&#34;&#34;
+
+    _tracking_color: CameraTrackingColor
+
+    @property
+    def tracking_color(self) -&gt; CameraTrackingColor:
+        &#34;&#34;&#34; 
+        The current color of which objects the camera will track.
+
+        Setting this value to a different color will trigger a camera update and
+        may block the thread briefly.
+        &#34;&#34;&#34;
+        return self._tracking_color
+
+    @tracking_color.setter
+    def tracking_color(self, value: CameraTrackingColor):
+        if type(value) is str:
+            self._tracking_color = CameraTrackingColor(value)
+        else:
+            self._tracking_color = value
+
+        self._change_color_to(self._tracking_color)
+        self.refresh()
+
+    def __init__(self, tracking_color: Union[CameraTrackingColor, str]):
+        &#34;&#34;&#34; 
+        Initializes the camera with a tracking color. The camera should only be 
+        used inside a `with` statement; for example:
+
+        &gt;&gt;&gt; with Camera(tracking_color=&#34;red&#34;) as camera:
+                print(camera.number_of_objects())
+
+        - `tracking_color`: This can either be a CameraTrackingColor or a
+        string representing a CameraTrackingColor, which will be
+        automatically converted.
+
+        - **Warning:** If the camera is not connected to the robot, then the
+        program will crash as defined in `libwallaby`.
+        &#34;&#34;&#34;
+        self.tracking_color = tracking_color
+
+    def __enter__(self):
+        libwallaby.camera_open()
+        self._change_color_to(self._tracking_color)
+        self.refresh()
+
+    def __exit__(self, exception_type, exception_value, traceback):
+        libwallaby.camera_close()
+
+    # - Refreshing camera
+
+    def refresh(self, frames: Optional[int] = None):
+        &#34;&#34;&#34;
+        Refreshes the camera by collecting the number of frames specified in
+        `Camera.number_of_updates_during_refresh` to make the object tracking
+        more accurate. Blocks the thread until finished.
+
+        You shouldn&#39;t normally need to call this method yourself; it is called
+        automatically during initialization and when the camera&#39;s tracking color
+        is changed.
+
+        - `frames`: If provided, this number of frames will be fetched instead.
+        &#34;&#34;&#34;
+        number_of_times = frames or self.number_of_updates_during_refresh
+
+        for _ in range(number_of_times):
+            libwallaby.camera_update()
+
+    # - Constants
+
+    camera_channel: int = 0
+    &#34;&#34;&#34;
+    The camera channel on which to check for objects. This shouldn&#39;t need to 
+    be changed if you use the provided configuration files.
+
+    If this value is inaccurate for your robot, you can change it. Do so as
+    early in your program as possible (eg. before you create/initialize any
+    components.)
+    &#34;&#34;&#34;
+
+    object_confidence_threshold: float = 0.42
+    &#34;&#34;&#34;
+    The minimum value returned by `libwallaby`&#39;s `get_object_confidence()` for 
+    an object to be recognized as &#34;trackable&#34;.
+
+    If this value is inaccurate for your robot, you can change it. Do so as
+    early in your program as possible (eg. before you create/initialize any
+    components.)
+    &#34;&#34;&#34;
+
+    number_of_updates_during_refresh: int = 20
+    &#34;&#34;&#34;
+    The number of frames the camera should fetch during a refresh (eg. during
+    initialization or a change in the active tracking color) before tracking
+    objects in the output. The higher the number, the more accurate object
+    tracking will be, but the longer it will take for refreshes to occur.
+
+    If this value is inaccurate for your robot, you can change it. Do so as
+    early in your program as possible (eg. before you create/initialize any
+    components.)
+    &#34;&#34;&#34;
+
+    camera_height_offset: int = 15
+    &#34;&#34;&#34;
+    The number of pixels to offset the camera boundaries to make object tracking
+    more accurate.
+
+    If this value is inaccurate for your robot, you can change it. Do so as
+    early in your program as possible (eg. before you create/initialize any
+    components.)
+    &#34;&#34;&#34;
+
+    # - Changing color 
+
+    def _change_color_to(self, tracking_color: CameraTrackingColor):
+        # The name of the configuration file to get the tracking info from. The 
+        # .conf extension should NOT be provided.
+        conf_name = f&#34;detect-{str(tracking_color)}&#34;
+
+        success = libwallaby.camera_load_config(conf_name) == 1
+
+        if not success:
+            raise EnvironmentError(f&#34;Error while loading tracking color \
+configuration file for color &#39;{str(tracking_color)}&#39;&#34;)
+
+    # - Object presence
+
+    def number_of_objects(self) -&gt; int:
+        &#34;&#34;&#34;
+        The number of objects currently in the field of view.
+        &#34;&#34;&#34;
+        return libwallaby.get_object_count(self.camera_channel)
+
+    def object_is_present(self) -&gt; bool:
+        &#34;&#34;&#34;
+        Whether an object of the current tracking color is present in the field 
+        of view.
+        &#34;&#34;&#34;
+        return self.number_of_objects() &gt;= 1
+
+    # - Bounding box
+
+    def object_bbox(self, object_number: int = 0) -&gt; Optional[Rectangle]:
+        &#34;&#34;&#34;
+        Returns the bounding box for an object in the field of view, or `None`
+        if the object is not found.
+        &#34;&#34;&#34;
+        if self.number_of_objects() &lt;= object_number:
+            return None
+
+        return libwallaby.get_object_bbox(self.camera_channel, object_number)
+
+    # - Distance
+
+    def distance_to_object(self, object_number: int = 0, object_height: float = 0) -&gt; Optional[float]:
+        &#34;&#34;&#34;
+        Returns the distance to an object in the field of view, or `None` if the
+        object is not found.
+
+        - `object_height`: The height of the object in question in mm. This should
+        be a known value based on the real-world measurement of the object
+        for accurate results.
+        &#34;&#34;&#34;
+        if self.number_of_objects() &lt;= object_number:
+            return None
+
+        object_bbox = self.object_bbox(object_number)
+        if object_bbox is None:
+            return None
+
+        object_height_px = float(object_bbox.height)
+        camera_height = float(libwallaby.get_camera_height()
+                              - self.camera_height_offset)
+
+        return camera_height * object_height / object_height_px
+
+    # - Confidence
+
+    def confidence_of_object(self, object_number: int = 0) -&gt; Optional[float]:
+        &#34;&#34;&#34;
+        Returns the confidence that the object is in the field of view, or
+        `None` if the object is not found at all.
+        &#34;&#34;&#34;
+
+        if self.number_of_objects() &lt;= object_number:
+            return None
+
+        return libwallaby.get_object_confidence(
+            self.camera_channel,
+            object_number
+        )
+
+    # - Trackability
+
+    def object_is_trackable(self, object_number: int = 0) -&gt; Optional[bool]:
+        &#34;&#34;&#34;
+        Returns whether an object is considered to be close enough to the camera
+        to be trackable, or `None` if the object is not found.
+        &#34;&#34;&#34;
+
+        if self.number_of_objects() &lt;= object_number:
+            return None
+
+        confidence = self.confidence_of_object(object_number)
+        if confidence is None:
+            return None
+
+        return confidence &gt; self.object_confidence_threshold</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="botball.core.components.devices.camera.Camera.Camera.camera_channel"><code class="name">var <span class="ident">camera_channel</span></code></dt>
+<dd>
+<section class="desc"><p>The camera channel on which to check for objects. This shouldn't need to
+be changed if you use the provided configuration files.</p>
+<p>If this value is inaccurate for your robot, you can change it. Do so as
+early in your program as possible (eg. before you create/initialize any
+components.)</p></section>
+</dd>
+<dt id="botball.core.components.devices.camera.Camera.Camera.camera_height_offset"><code class="name">var <span class="ident">camera_height_offset</span></code></dt>
+<dd>
+<section class="desc"><p>The number of pixels to offset the camera boundaries to make object tracking
+more accurate.</p>
+<p>If this value is inaccurate for your robot, you can change it. Do so as
+early in your program as possible (eg. before you create/initialize any
+components.)</p></section>
+</dd>
+<dt id="botball.core.components.devices.camera.Camera.Camera.number_of_updates_during_refresh"><code class="name">var <span class="ident">number_of_updates_during_refresh</span></code></dt>
+<dd>
+<section class="desc"><p>The number of frames the camera should fetch during a refresh (eg. during
+initialization or a change in the active tracking color) before tracking
+objects in the output. The higher the number, the more accurate object
+tracking will be, but the longer it will take for refreshes to occur.</p>
+<p>If this value is inaccurate for your robot, you can change it. Do so as
+early in your program as possible (eg. before you create/initialize any
+components.)</p></section>
+</dd>
+<dt id="botball.core.components.devices.camera.Camera.Camera.object_confidence_threshold"><code class="name">var <span class="ident">object_confidence_threshold</span></code></dt>
+<dd>
+<section class="desc"><p>The minimum value returned by <code>libwallaby</code>'s <code>get_object_confidence()</code> for
+an object to be recognized as "trackable".</p>
+<p>If this value is inaccurate for your robot, you can change it. Do so as
+early in your program as possible (eg. before you create/initialize any
+components.)</p></section>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="botball.core.components.devices.camera.Camera.Camera.tracking_color"><code class="name">var <span class="ident">tracking_color</span></code></dt>
+<dd>
+<section class="desc"><p>The current color of which objects the camera will track.</p>
+<p>Setting this value to a different color will trigger a camera update and
+may block the thread briefly.</p></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">@property
+def tracking_color(self) -&gt; CameraTrackingColor:
+    &#34;&#34;&#34; 
+    The current color of which objects the camera will track.
+
+    Setting this value to a different color will trigger a camera update and
+    may block the thread briefly.
+    &#34;&#34;&#34;
+    return self._tracking_color</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="botball.core.components.devices.camera.Camera.Camera.confidence_of_object"><code class="name flex">
+<span>def <span class="ident">confidence_of_object</span></span>(<span>self, object_number: int = 0) -> Union[float, NoneType]</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Returns the confidence that the object is in the field of view, or
+<code>None</code> if the object is not found at all.</p></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">def confidence_of_object(self, object_number: int = 0) -&gt; Optional[float]:
+    &#34;&#34;&#34;
+    Returns the confidence that the object is in the field of view, or
+    `None` if the object is not found at all.
+    &#34;&#34;&#34;
+
+    if self.number_of_objects() &lt;= object_number:
+        return None
+
+    return libwallaby.get_object_confidence(
+        self.camera_channel,
+        object_number
+    )</code></pre>
+</details>
+</dd>
+<dt id="botball.core.components.devices.camera.Camera.Camera.distance_to_object"><code class="name flex">
+<span>def <span class="ident">distance_to_object</span></span>(<span>self, object_number: int = 0, object_height: float = 0) -> Union[float, NoneType]</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Returns the distance to an object in the field of view, or <code>None</code> if the
+object is not found.</p>
+<ul>
+<li><code>object_height</code>: The height of the object in question in mm. This should
+be a known value based on the real-world measurement of the object
+for accurate results.</li>
+</ul></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">def distance_to_object(self, object_number: int = 0, object_height: float = 0) -&gt; Optional[float]:
+    &#34;&#34;&#34;
+    Returns the distance to an object in the field of view, or `None` if the
+    object is not found.
+
+    - `object_height`: The height of the object in question in mm. This should
+    be a known value based on the real-world measurement of the object
+    for accurate results.
+    &#34;&#34;&#34;
+    if self.number_of_objects() &lt;= object_number:
+        return None
+
+    object_bbox = self.object_bbox(object_number)
+    if object_bbox is None:
+        return None
+
+    object_height_px = float(object_bbox.height)
+    camera_height = float(libwallaby.get_camera_height()
+                          - self.camera_height_offset)
+
+    return camera_height * object_height / object_height_px</code></pre>
+</details>
+</dd>
+<dt id="botball.core.components.devices.camera.Camera.Camera.number_of_objects"><code class="name flex">
+<span>def <span class="ident">number_of_objects</span></span>(<span>self) -> int</span>
+</code></dt>
+<dd>
+<section class="desc"><p>The number of objects currently in the field of view.</p></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">def number_of_objects(self) -&gt; int:
+    &#34;&#34;&#34;
+    The number of objects currently in the field of view.
+    &#34;&#34;&#34;
+    return libwallaby.get_object_count(self.camera_channel)</code></pre>
+</details>
+</dd>
+<dt id="botball.core.components.devices.camera.Camera.Camera.object_bbox"><code class="name flex">
+<span>def <span class="ident">object_bbox</span></span>(<span>self, object_number: int = 0) -> Union[<a title="botball.core.components.devices.camera.Rectangle.Rectangle" href="Rectangle.html#botball.core.components.devices.camera.Rectangle.Rectangle">Rectangle</a>, NoneType]</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Returns the bounding box for an object in the field of view, or <code>None</code>
+if the object is not found.</p></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">def object_bbox(self, object_number: int = 0) -&gt; Optional[Rectangle]:
+    &#34;&#34;&#34;
+    Returns the bounding box for an object in the field of view, or `None`
+    if the object is not found.
+    &#34;&#34;&#34;
+    if self.number_of_objects() &lt;= object_number:
+        return None
+
+    return libwallaby.get_object_bbox(self.camera_channel, object_number)</code></pre>
+</details>
+</dd>
+<dt id="botball.core.components.devices.camera.Camera.Camera.object_is_present"><code class="name flex">
+<span>def <span class="ident">object_is_present</span></span>(<span>self) -> bool</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Whether an object of the current tracking color is present in the field
+of view.</p></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">def object_is_present(self) -&gt; bool:
+    &#34;&#34;&#34;
+    Whether an object of the current tracking color is present in the field 
+    of view.
+    &#34;&#34;&#34;
+    return self.number_of_objects() &gt;= 1</code></pre>
+</details>
+</dd>
+<dt id="botball.core.components.devices.camera.Camera.Camera.object_is_trackable"><code class="name flex">
+<span>def <span class="ident">object_is_trackable</span></span>(<span>self, object_number: int = 0) -> Union[bool, NoneType]</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Returns whether an object is considered to be close enough to the camera
+to be trackable, or <code>None</code> if the object is not found.</p></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">def object_is_trackable(self, object_number: int = 0) -&gt; Optional[bool]:
+    &#34;&#34;&#34;
+    Returns whether an object is considered to be close enough to the camera
+    to be trackable, or `None` if the object is not found.
+    &#34;&#34;&#34;
+
+    if self.number_of_objects() &lt;= object_number:
+        return None
+
+    confidence = self.confidence_of_object(object_number)
+    if confidence is None:
+        return None
+
+    return confidence &gt; self.object_confidence_threshold</code></pre>
+</details>
+</dd>
+<dt id="botball.core.components.devices.camera.Camera.Camera.refresh"><code class="name flex">
+<span>def <span class="ident">refresh</span></span>(<span>self, frames: Union[int, NoneType] = None)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Refreshes the camera by collecting the number of frames specified in
+<a title="botball.core.components.devices.camera.Camera.Camera.number_of_updates_during_refresh" href="#botball.core.components.devices.camera.Camera.Camera.number_of_updates_during_refresh"><code>Camera.number_of_updates_during_refresh</code></a> to make the object tracking
+more accurate. Blocks the thread until finished.</p>
+<p>You shouldn't normally need to call this method yourself; it is called
+automatically during initialization and when the camera's tracking color
+is changed.</p>
+<ul>
+<li><code>frames</code>: If provided, this number of frames will be fetched instead.</li>
+</ul></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">def refresh(self, frames: Optional[int] = None):
+    &#34;&#34;&#34;
+    Refreshes the camera by collecting the number of frames specified in
+    `Camera.number_of_updates_during_refresh` to make the object tracking
+    more accurate. Blocks the thread until finished.
+
+    You shouldn&#39;t normally need to call this method yourself; it is called
+    automatically during initialization and when the camera&#39;s tracking color
+    is changed.
+
+    - `frames`: If provided, this number of frames will be fetched instead.
+    &#34;&#34;&#34;
+    number_of_times = frames or self.number_of_updates_during_refresh
+
+    for _ in range(number_of_times):
+        libwallaby.camera_update()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="botball.core.components.devices.camera" href="index.html">botball.core.components.devices.camera</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="botball.core.components.devices.camera.Camera.Camera" href="#botball.core.components.devices.camera.Camera.Camera">Camera</a></code></h4>
+<ul class="">
+<li><code><a title="botball.core.components.devices.camera.Camera.Camera.camera_channel" href="#botball.core.components.devices.camera.Camera.Camera.camera_channel">camera_channel</a></code></li>
+<li><code><a title="botball.core.components.devices.camera.Camera.Camera.camera_height_offset" href="#botball.core.components.devices.camera.Camera.Camera.camera_height_offset">camera_height_offset</a></code></li>
+<li><code><a title="botball.core.components.devices.camera.Camera.Camera.confidence_of_object" href="#botball.core.components.devices.camera.Camera.Camera.confidence_of_object">confidence_of_object</a></code></li>
+<li><code><a title="botball.core.components.devices.camera.Camera.Camera.distance_to_object" href="#botball.core.components.devices.camera.Camera.Camera.distance_to_object">distance_to_object</a></code></li>
+<li><code><a title="botball.core.components.devices.camera.Camera.Camera.number_of_objects" href="#botball.core.components.devices.camera.Camera.Camera.number_of_objects">number_of_objects</a></code></li>
+<li><code><a title="botball.core.components.devices.camera.Camera.Camera.number_of_updates_during_refresh" href="#botball.core.components.devices.camera.Camera.Camera.number_of_updates_during_refresh">number_of_updates_during_refresh</a></code></li>
+<li><code><a title="botball.core.components.devices.camera.Camera.Camera.object_bbox" href="#botball.core.components.devices.camera.Camera.Camera.object_bbox">object_bbox</a></code></li>
+<li><code><a title="botball.core.components.devices.camera.Camera.Camera.object_confidence_threshold" href="#botball.core.components.devices.camera.Camera.Camera.object_confidence_threshold">object_confidence_threshold</a></code></li>
+<li><code><a title="botball.core.components.devices.camera.Camera.Camera.object_is_present" href="#botball.core.components.devices.camera.Camera.Camera.object_is_present">object_is_present</a></code></li>
+<li><code><a title="botball.core.components.devices.camera.Camera.Camera.object_is_trackable" href="#botball.core.components.devices.camera.Camera.Camera.object_is_trackable">object_is_trackable</a></code></li>
+<li><code><a title="botball.core.components.devices.camera.Camera.Camera.refresh" href="#botball.core.components.devices.camera.Camera.Camera.refresh">refresh</a></code></li>
+<li><code><a title="botball.core.components.devices.camera.Camera.Camera.tracking_color" href="#botball.core.components.devices.camera.Camera.Camera.tracking_color">tracking_color</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.6.3</a>.</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad()</script>
+</body>
+</html>
