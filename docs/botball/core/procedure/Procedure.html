@@ -40,9 +40,9 @@ class Procedure(object):
     An ordered list of all steps in the procedure.
     &#34;&#34;&#34;
 
-    def __init__(self, name: str, steps: List[Step] = []):
+    def __init__(self, name: str, steps: List[Step] = None):
         self.name = name 
-        self.steps = steps
+        self.steps = steps or []
 
     def add_step(self, step: Step):
         &#34;&#34;&#34;
@@ -106,7 +106,7 @@ class Procedure(object):
 <dl>
 <dt id="botball.core.procedure.Procedure.Procedure"><code class="flex name class">
 <span>class <span class="ident">Procedure</span></span>
-<span>(</span><span>name: str, steps: List[<a title="botball.core.procedure.Step.Step" href="Step.html#botball.core.procedure.Step.Step">Step</a>] = [])</span>
+<span>(</span><span>name: str, steps: List[<a title="botball.core.procedure.Step.Step" href="Step.html#botball.core.procedure.Step.Step">Step</a>] = None)</span>
 </code></dt>
 <dd>
 <section class="desc"><p>Represents a procedure defined by a series of steps.</p></section>
@@ -124,9 +124,9 @@ class Procedure(object):
     An ordered list of all steps in the procedure.
     &#34;&#34;&#34;
 
-    def __init__(self, name: str, steps: List[Step] = []):
+    def __init__(self, name: str, steps: List[Step] = None):
         self.name = name 
-        self.steps = steps
+        self.steps = steps or []
 
     def add_step(self, step: Step):
         &#34;&#34;&#34;

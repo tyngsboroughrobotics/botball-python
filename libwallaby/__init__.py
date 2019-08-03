@@ -1,5 +1,5 @@
 try:
-    from ._bindings import *
+    from .bindings import *
 except ImportError:
     print("WARNING: Using libwallaby on development machine")
 

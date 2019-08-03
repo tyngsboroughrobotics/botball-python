@@ -22,14 +22,14 @@
 <section id="section-intro">
 <details class="source">
 <summary>Source code</summary>
-<pre><code class="python">def scale(x: float, inmin: float, inmax: float, outmin: float, outmax: float) -&gt; float:
+<pre><code class="python">def scale(x: float, in_min: float, in_max: float, out_min: float, out_max: float) -&gt; float:
     &#34;&#34;&#34;
     Scales a number from one range to another.
 
     &gt;&gt;&gt; scale(5, 1, 10, 1, 100)
     50
     &#34;&#34;&#34;
-    return (x - inmin) * (outmax - outmin) / (inmax - inmin) + outmin</code></pre>
+    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min</code></pre>
 </details>
 </section>
 <section>
@@ -40,7 +40,7 @@
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="botball.core.helpers.scale.scale"><code class="name flex">
-<span>def <span class="ident">scale</span></span>(<span>x: float, inmin: float, inmax: float, outmin: float, outmax: float) -> float</span>
+<span>def <span class="ident">scale</span></span>(<span>x: float, in_min: float, in_max: float, out_min: float, out_max: float) -> float</span>
 </code></dt>
 <dd>
 <section class="desc"><p>Scales a number from one range to another.</p>
@@ -49,14 +49,14 @@
 </code></pre></section>
 <details class="source">
 <summary>Source code</summary>
-<pre><code class="python">def scale(x: float, inmin: float, inmax: float, outmin: float, outmax: float) -&gt; float:
+<pre><code class="python">def scale(x: float, in_min: float, in_max: float, out_min: float, out_max: float) -&gt; float:
     &#34;&#34;&#34;
     Scales a number from one range to another.
 
     &gt;&gt;&gt; scale(5, 1, 10, 1, 100)
     50
     &#34;&#34;&#34;
-    return (x - inmin) * (outmax - outmin) / (inmax - inmin) + outmin</code></pre>
+    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min</code></pre>
 </details>
 </dd>
 </dl>

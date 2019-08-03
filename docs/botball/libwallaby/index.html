@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.6.3" />
 <title>botball.libwallaby API documentation</title>
-<meta name="description" content="The actual bindings are located in `_bindings.py`; `bindings.py` is a symlink to `bindings.pyi` so it can work with Pydoc." />
+<meta name="description" content="The actual bindings are located in `_bindings.py`; `_bindings.pyi` is a symlink to `bindings.py` so it can work with Pydoc." />
 <link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'>
 <link href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css' rel='stylesheet'>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
@@ -20,11 +20,11 @@
 <h1 class="title">Module <code>botball.libwallaby</code></h1>
 </header>
 <section id="section-intro">
-<p>The actual bindings are located in <code>_bindings.py</code>; <code>bindings.py</code> is a symlink to <code>bindings.pyi</code> so it can work with Pydoc.</p>
+<p>The actual bindings are located in <code>_bindings.py</code>; <code>_bindings.pyi</code> is a symlink to <code>bindings.py</code> so it can work with Pydoc.</p>
 <details class="source">
 <summary>Source code</summary>
 <pre><code class="python">try:
-    from ._bindings import *
+    from .bindings import *
 except ImportError:
     print(&#34;WARNING: Using libwallaby on development machine&#34;)
 
