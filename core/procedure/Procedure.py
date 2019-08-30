@@ -34,7 +34,7 @@ class Procedure(object):
 
     # - Running the procedure
 
-    def run(self, in_between_delay: int = 0, debug: bool = True):
+    def run(self, in_between_delay: int = 0, debug: bool = False):
         """
         Runs the procedure.
 
