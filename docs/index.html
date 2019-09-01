@@ -22,16 +22,54 @@
 <section id="section-intro">
 <h1 id="botball-for-python">Botball for Python</h1>
 <p>Botball for Python provides Python wrappers for several useful Botball components (including motors, servos, sensors and wheels), as well as access to the entire <a title="botball.libwallaby" href="libwallaby/index.html"><code>botball.libwallaby</code></a> C library so it can interoperate with existing projects. Botball for Python is designed for Python 3.6 and is fully typed and documented.</p>
-<h2 id="documentation">Documentation</h2>
+<p>Botball for Python is really two things:</p>
+<ul>
+<li>A set of wrappers for <a title="botball.libwallaby" href="libwallaby/index.html"><code>botball.libwallaby</code></a> functions useful in Botball competitions</li>
+<li>An interface for describing how your robot should behave during a match</li>
+</ul>
+<h2 id="links">Links</h2>
+<p>The source code is available at <a href="https://github.com/tyngsboroughrobotics/botball.">https://github.com/tyngsboroughrobotics/botball.</a></p>
 <p>The documentation is available at <a href="https://tyngsboroughrobotics.github.io/botball.">https://tyngsboroughrobotics.github.io/botball.</a></p>
 <h2 id="installation-and-usage">Installation and usage</h2>
-<p>To install Botball for Python on your system, simply run <code>pip install botball</code> or add it to your virtualenv. Check out the <a href="https://botball.readthedocs.io">documentation</a> for details on how to set up a project you can run on your robot!</p>
+<p>Please read the <a href="#setting-up-a-project">Setting up a project</a> section for details on how to install Botball for Python on your robot.</p>
 <h2 id="contributing">Contributing</h2>
 <p>Botball for Python is provided by the Tyngsborough Robotics team for use by all Botball participants! If you find a bug or want to request new functionality, please <a href="https://github.com/tyngsboroughrobotics/botball/issues/new">create an issue</a> or submit a pull request. We'll try our best to be responsive and provide updated documentation when things change.</p>
 <p>Botball for Python is actively developed and maintained by:</p>
 <ul>
 <li>Wilson Gramer (<a href="https://github.com/Wilsonator5000">GitHub</a>, <a href="https://twitter.com/wgramer03">Twitter</a>)</li>
 </ul>
+<hr>
+<h1 id="setting-up-a-project">Setting up a project</h1>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Make sure you have the following software on your computer:</p>
+<h3 id="macos">macOS</h3>
+<ul>
+<li>PyCharm CE 2019.2 or later (<a href="https://www.jetbrains.com/pycharm/">https://www.jetbrains.com/pycharm/</a>)</li>
+<li>Homebrew (<a href="https://brew.sh/">https://brew.sh/</a>)</li>
+<li>Latest Git version (<code>brew install git</code>)</li>
+<li>Python 3.7 or later (<code>brew install python</code>)</li>
+</ul>
+<h3 id="windows">Windows</h3>
+<ul>
+<li>PyCharm CE 2019.2 or later (<a href="https://www.jetbrains.com/pycharm/">https://www.jetbrains.com/pycharm/</a>)</li>
+<li>Latest Git version (<a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a>)</li>
+<li>Python 3.7 or later (<a href="https://www.python.org/downloads/windows/">https://www.python.org/downloads/windows/</a>)</li>
+</ul>
+<h3 id="chrome-oslinux">Chrome OS/Linux</h3>
+<ul>
+<li>Unfortunately Chrome OS/Linux isn't supported at the moment, but feel free to make a pull request!</li>
+</ul>
+<p>Some knowledge of Python is required; some knowledge of the terminal would be useful.</p>
+<h2 id="creating-your-project">Creating your project</h2>
+<p>Because Botball for Python's wrappers have already been written by us, all you need to do is create a Python project with the code you want to run during matches. Luckily this process is super simple because we wrote a program to generate it all for you!</p>
+<ol>
+<li>
+<p>Open your terminal (on Windows, use WSL or Git Bash) and run <code>...</code>.</p>
+</li>
+<li>
+<p>Lorem ipsum dolor sit amet</p>
+</li>
+</ol>
 <details class="source">
 <summary>Source code</summary>
 <pre><code class="python">from . import core, libwallaby
@@ -67,9 +105,19 @@ with open(&#34;README.md&#34;) as readme:
 <div class="toc">
 <ul>
 <li><a href="#botball-for-python">Botball for Python</a><ul>
-<li><a href="#documentation">Documentation</a></li>
+<li><a href="#links">Links</a></li>
 <li><a href="#installation-and-usage">Installation and usage</a></li>
 <li><a href="#contributing">Contributing</a></li>
+</ul>
+</li>
+<li><a href="#setting-up-a-project">Setting up a project</a><ul>
+<li><a href="#prerequisites">Prerequisites</a><ul>
+<li><a href="#macos">macOS</a></li>
+<li><a href="#windows">Windows</a></li>
+<li><a href="#chrome-oslinux">Chrome OS/Linux</a></li>
+</ul>
+</li>
+<li><a href="#creating-your-project">Creating your project</a></li>
 </ul>
 </li>
 </ul>
