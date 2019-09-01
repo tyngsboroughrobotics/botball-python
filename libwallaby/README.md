@@ -1,1 +1,0 @@
-The actual bindings are located in `_bindings.py`; `_bindings.pyi` is a symlink to `bindings.py` so it can work with Pydoc.

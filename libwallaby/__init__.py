@@ -1,9 +1,8 @@
 try:
-    from ._bindings import *
+    # The actual code is located in _bindings.py, but it will be mapped to
+    # bindings.py during the build. This way we can use the type stub in PyCharm
+    # and still have access to the raw bindings on the Wallaby.
+    from .bindings import *
 except ImportError:
-    print("WARNING: Using libwallaby on development machine")
-
-# Add README to documentation
-with open("libwallaby/README.md") as readme:
-    global __doc__
-    __doc__ = "".join(readme.readlines())
+    print("ERROR: Using libwallaby on development machine")
+    exit(1)

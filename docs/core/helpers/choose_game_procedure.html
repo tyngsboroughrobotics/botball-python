@@ -66,7 +66,7 @@ def choose_game_procedure(demobot: Procedure, create: Procedure, **run_args) -&g
     else:
         raise ValueError(&#34;Neither BOTBALL_USE_DEMOBOT nor BOTBALL_USE_CREATE found in environment variables&#34;)
 
-    debug = &#34;BOTBALL_USE_DEBUG&#34; in os.environ
+    debug = os.getenv(&#34;BOTBALL_USE_DEBUG&#34;) == &#34;true&#34;
 
     return lambda: procedure_to_use.run(debug=debug, **run_args)</code></pre>
 </details>
@@ -162,7 +162,7 @@ appropriate <code>run</code> function with its <code>debug</code> parameter set 
     else:
         raise ValueError(&#34;Neither BOTBALL_USE_DEMOBOT nor BOTBALL_USE_CREATE found in environment variables&#34;)
 
-    debug = &#34;BOTBALL_USE_DEBUG&#34; in os.environ
+    debug = os.getenv(&#34;BOTBALL_USE_DEBUG&#34;) == &#34;true&#34;
 
     return lambda: procedure_to_use.run(debug=debug, **run_args)</code></pre>
 </details>
