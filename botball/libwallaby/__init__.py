@@ -3,6 +3,7 @@ try:
     # bindings.py during the build. This way we can use the type stub in PyCharm
     # and still have access to the raw bindings on the Wallaby.
     from .bindings import *
+    from ._bindings import *
 except ImportError:
     print("ERROR: Using libwallaby on development machine")
     exit(1)
