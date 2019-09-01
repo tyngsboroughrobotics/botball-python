@@ -1,5 +1,9 @@
+try:
+    from typing import List
+except ImportError:
+    pass
+
 from botball import libwallaby
-from typing import List
 from datetime import datetime
 from .Step import Step
 

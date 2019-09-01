@@ -1,5 +1,9 @@
+try:
+    from typing import Union, Optional
+except ImportError:
+    pass
+
 from botball import libwallaby
-from typing import Union, Optional
 from .CameraTrackingColor import CameraTrackingColor
 from .Rectangle import Rectangle
 

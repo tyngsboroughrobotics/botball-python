@@ -1,4 +1,8 @@
-from typing import Any
+try:
+    from typing import Any
+except ImportError:
+    pass
+
 
 def accel_x() -> int:
     """

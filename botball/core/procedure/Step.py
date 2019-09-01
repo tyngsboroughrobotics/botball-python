@@ -1,4 +1,7 @@
-from typing import Optional, Callable, Union
+try:
+    from typing import Optional, Callable, Union
+except ImportError:
+    pass
 
 
 class Step(object): 
