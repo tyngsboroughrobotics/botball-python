@@ -1,5 +1,5 @@
 import os
-import libwallaby
+from botball import libwallaby
 from .AnalogSensor import AnalogSensor
 
 

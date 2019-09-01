@@ -4,7 +4,7 @@ documentation:
 	rm -f docs/index.html
 
 	# Build documentation
-	pdoc --template docs -o docs --html . --force
+	pdoc --template docs -o docs --html botball/ --force
 	mv docs/botball/** docs
 
 	# Remove temp directory
@@ -15,12 +15,12 @@ build-for-py2:
 	rm -rf _py2_build
 
 	# Build "core" folder
-	py-backwards -i core -o _py2_build/core -t 2.7
+	py-backwards -i botball/core -o _py2_build/botball/core -t 2.7
 
 	# Build "libwallaby" folder
-	mkdir -p _py2_build/libwallaby
-	cp libwallaby/__init__.py _py2_build/libwallaby/__init__.py
-	cp libwallaby/_bindings.py _py2_build/libwallaby/bindings.py
+	mkdir -p _py2_build/botball/libwallaby
+	cp botball/libwallaby/__init__.py _py2_build/botball/libwallaby/__init__.py
+	cp botball/libwallaby/_bindings.py _py2_build/botball/libwallaby/bindings.py
 
 	# Add __init__.py to build
-	echo "from . import core, libwallaby" > _py2_build/__init__.py
+	echo "from . import core, libwallaby" > _py2_build/botball/__init__.py

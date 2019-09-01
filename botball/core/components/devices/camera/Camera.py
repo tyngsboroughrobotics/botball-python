@@ -1,4 +1,4 @@
-import libwallaby
+from botball import libwallaby
 from typing import Union, Optional
 from .CameraTrackingColor import CameraTrackingColor
 from .Rectangle import Rectangle

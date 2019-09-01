@@ -1,4 +1,4 @@
-import libwallaby
+from botball import libwallaby
 from ..Movable import Movable
 from ..Direction import Direction
 from ...helpers.scale import scale 

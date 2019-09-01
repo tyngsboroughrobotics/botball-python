@@ -1,4 +1,4 @@
-import libwallaby
+from botball import libwallaby
 from .Motor import Motor
 from ..Direction import Direction
 

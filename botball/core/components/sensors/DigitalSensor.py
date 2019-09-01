@@ -1,4 +1,4 @@
-import libwallaby
+from botball import libwallaby
 from ..Component import Component
 
 

@@ -1,4 +1,4 @@
-import libwallaby
+from botball import libwallaby
 from ..components import Direction, Motor
 from ..helpers import scale
 
