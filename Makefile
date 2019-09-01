@@ -24,3 +24,7 @@ build-for-py2:
 
 	# Add __init__.py to build
 	echo "from . import core, libwallaby" > _py2_build/botball/__init__.py
+
+	# Restore files that shouldn't be converted to Python 2 because they already
+	# are
+	cp -f botball/core/helpers/enum.py _py2_build/botball/core/helpers/enum.py
