@@ -1,4 +1,4 @@
-from enum import Enum 
+from ....helpers.enum import Enum
 
 
 class CameraTrackingColor(Enum):
