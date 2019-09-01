@@ -35,13 +35,13 @@ def choose_game_procedure(demobot: Procedure, create: Procedure, **run_args) -> 
     appropriate `run` function with its `debug` parameter set to `True`.
     """
 
-    if "BOTBALL_USE_DEMOBOT" in os.environ:
+    if b"BOTBALL_USE_DEMOBOT" in os.environ:
         procedure_to_use = demobot
-    elif "BOTBALL_USE_CREATE" in os.environ:
+    elif b"BOTBALL_USE_CREATE" in os.environ:
         procedure_to_use = create
     else:
         raise ValueError("Neither BOTBALL_USE_DEMOBOT nor BOTBALL_USE_CREATE found in environment variables")
 
-    debug = os.getenv("BOTBALL_USE_DEBUG") == "true"
+    debug = os.environ[b"BOTBALL_USE_DEBUG"] == "true"
 
     return lambda: procedure_to_use.run(debug=debug, **run_args)
