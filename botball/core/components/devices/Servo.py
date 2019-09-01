@@ -1,4 +1,4 @@
-from botball import libwallaby
+from botball import wallaby
 from ..Movable import Movable
 from ..Direction import Direction
 from ...helpers.scale import scale 
@@ -15,13 +15,13 @@ class Servo(Movable):
         """ 
         Enables the servo. 
         """ 
-        libwallaby.enable_servo(self.port)
+        wallaby.enable_servo(self.port)
 
     def disable(self): 
         """ 
         Disables the servo.
         """
-        libwallaby.disable_servo(self.port) 
+        wallaby.disable_servo(self.port)
 
     def set_position_to(self, position: float):
         """ 
@@ -47,13 +47,13 @@ class Servo(Movable):
             self._position = x 
 
             raw_position = initial_position + (x * direction.multiplier())
-            libwallaby.set_servo_position(self.port, raw_position)
+            wallaby.set_servo_position(self.port, raw_position)
 
-            libwallaby.msleep(time_interval)
+            wallaby.msleep(time_interval)
             x += 1
         
         # just wait a little bit longer for the servo to finish
-        libwallaby.msleep(100)
+        wallaby.msleep(100)
 
         self.disable()
 

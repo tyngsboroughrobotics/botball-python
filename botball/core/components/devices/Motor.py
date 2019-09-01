@@ -1,4 +1,4 @@
-from botball import libwallaby
+from botball import wallaby
 from ..Movable import Movable
 from ..Direction import Direction
 from ...helpers.scale import scale 
@@ -33,23 +33,23 @@ class Motor(Movable):
         """
         velocity = int(self._velocity() * direction.multiplier())
 
-        libwallaby.move_at_velocity(self.port, velocity)
+        wallaby.move_at_velocity(self.port, velocity)
 
         if block:
             distance_ticks = self._mm_to_ticks(mm)
             ms_to_sleep = int(self._ticks_to_ms(distance_ticks))
 
-            libwallaby.msleep(ms_to_sleep)
-            libwallaby.off(self.port) 
+            wallaby.msleep(ms_to_sleep)
+            wallaby.off(self.port)
 
         if sleep:
-            libwallaby.msleep(self.default_sleep_time)
+            wallaby.msleep(self.default_sleep_time)
 
     # - Constants
 
     motor_ticks_per_mm: float = 10 / 1.13
     """
-    The number of motor "ticks" (`libwallaby`'s internal motor unit) in one
+    The number of motor "ticks" (`wallaby`'s internal motor unit) in one
     millimeter.
 
     If this value is inaccurate for your robot, you can change it. Do so as
@@ -59,7 +59,7 @@ class Motor(Movable):
 
     motor_ticks_per_second: float = 818
     """
-    The number of motor "ticks" (`libwallaby`'s internal motor unit) a
+    The number of motor "ticks" (`wallaby`'s internal motor unit) a
     motor will travel at full speed in one second.
 
     If this value is inaccurate for your robot, you can change it. Do so as

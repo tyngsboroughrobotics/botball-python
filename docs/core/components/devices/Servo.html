@@ -22,7 +22,7 @@
 <section id="section-intro">
 <details class="source">
 <summary>Source code</summary>
-<pre><code class="python">from botball import libwallaby
+<pre><code class="python">from botball import wallaby
 from ..Movable import Movable
 from ..Direction import Direction
 from ...helpers.scale import scale 
@@ -39,13 +39,13 @@ class Servo(Movable):
         &#34;&#34;&#34; 
         Enables the servo. 
         &#34;&#34;&#34; 
-        libwallaby.enable_servo(self.port)
+        wallaby.enable_servo(self.port)
 
     def disable(self): 
         &#34;&#34;&#34; 
         Disables the servo.
         &#34;&#34;&#34;
-        libwallaby.disable_servo(self.port) 
+        wallaby.disable_servo(self.port)
 
     def set_position_to(self, position: float):
         &#34;&#34;&#34; 
@@ -71,13 +71,13 @@ class Servo(Movable):
             self._position = x 
 
             raw_position = initial_position + (x * direction.multiplier())
-            libwallaby.set_servo_position(self.port, raw_position)
+            wallaby.set_servo_position(self.port, raw_position)
 
-            libwallaby.msleep(time_interval)
+            wallaby.msleep(time_interval)
             x += 1
         
         # just wait a little bit longer for the servo to finish
-        libwallaby.msleep(100)
+        wallaby.msleep(100)
 
         self.disable()
 
@@ -147,13 +147,13 @@ class Servo(Movable):
         &#34;&#34;&#34; 
         Enables the servo. 
         &#34;&#34;&#34; 
-        libwallaby.enable_servo(self.port)
+        wallaby.enable_servo(self.port)
 
     def disable(self): 
         &#34;&#34;&#34; 
         Disables the servo.
         &#34;&#34;&#34;
-        libwallaby.disable_servo(self.port) 
+        wallaby.disable_servo(self.port)
 
     def set_position_to(self, position: float):
         &#34;&#34;&#34; 
@@ -179,13 +179,13 @@ class Servo(Movable):
             self._position = x 
 
             raw_position = initial_position + (x * direction.multiplier())
-            libwallaby.set_servo_position(self.port, raw_position)
+            wallaby.set_servo_position(self.port, raw_position)
 
-            libwallaby.msleep(time_interval)
+            wallaby.msleep(time_interval)
             x += 1
         
         # just wait a little bit longer for the servo to finish
-        libwallaby.msleep(100)
+        wallaby.msleep(100)
 
         self.disable()
 
@@ -261,7 +261,7 @@ components.)</p></section>
     &#34;&#34;&#34; 
     Disables the servo.
     &#34;&#34;&#34;
-    libwallaby.disable_servo(self.port) </code></pre>
+    wallaby.disable_servo(self.port)</code></pre>
 </details>
 </dd>
 <dt id="botball.core.components.devices.Servo.Servo.enable"><code class="name flex">
@@ -275,7 +275,7 @@ components.)</p></section>
     &#34;&#34;&#34; 
     Enables the servo. 
     &#34;&#34;&#34; 
-    libwallaby.enable_servo(self.port)</code></pre>
+    wallaby.enable_servo(self.port)</code></pre>
 </details>
 </dd>
 <dt id="botball.core.components.devices.Servo.Servo.position"><code class="name flex">
@@ -330,13 +330,13 @@ components.)</p></section>
         self._position = x 
 
         raw_position = initial_position + (x * direction.multiplier())
-        libwallaby.set_servo_position(self.port, raw_position)
+        wallaby.set_servo_position(self.port, raw_position)
 
-        libwallaby.msleep(time_interval)
+        wallaby.msleep(time_interval)
         x += 1
     
     # just wait a little bit longer for the servo to finish
-    libwallaby.msleep(100)
+    wallaby.msleep(100)
 
     self.disable()</code></pre>
 </details>

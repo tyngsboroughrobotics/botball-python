@@ -1,4 +1,4 @@
-from botball import libwallaby
+from botball import wallaby
 from .Motor import Motor
 from ..Direction import Direction
 
@@ -72,10 +72,10 @@ class WheelGroup(object):
         right_motor.move(right_direction, mm=right_distance_offset, block=block, sleep=False)
 
         if block:
-            libwallaby.off(left_motor.port)
+            wallaby.off(left_motor.port)
 
         if sleep:
-            libwallaby.msleep(Motor.default_sleep_time)
+            wallaby.msleep(Motor.default_sleep_time)
 
     def drive(
         self,

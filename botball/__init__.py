@@ -1,4 +1,4 @@
-from . import core, libwallaby
+from . import core, wallaby
 
 try:
     # Add README to documentation

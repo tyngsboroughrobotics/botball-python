@@ -23,7 +23,7 @@
 <details class="source">
 <summary>Source code</summary>
 <pre><code class="python">import os
-from botball import libwallaby
+from botball import wallaby
 from .AnalogSensor import AnalogSensor
 
 
@@ -38,7 +38,7 @@ class LightSensor(AnalogSensor):
         robot does not start moving before the signal lights turn on at the
         competition.
         &#34;&#34;&#34;
-        libwallaby.wait_for_light(self.port)
+        wallaby.wait_for_light(self.port)
 
     def wait_for_light_if_competition(self):
         &#34;&#34;&#34;
@@ -76,7 +76,7 @@ class LightSensor(AnalogSensor):
         robot does not start moving before the signal lights turn on at the
         competition.
         &#34;&#34;&#34;
-        libwallaby.wait_for_light(self.port)
+        wallaby.wait_for_light(self.port)
 
     def wait_for_light_if_competition(self):
         &#34;&#34;&#34;
@@ -107,7 +107,7 @@ competition.</p></section>
     robot does not start moving before the signal lights turn on at the
     competition.
     &#34;&#34;&#34;
-    libwallaby.wait_for_light(self.port)</code></pre>
+    wallaby.wait_for_light(self.port)</code></pre>
 </details>
 </dd>
 <dt id="botball.core.components.sensors.LightSensor.LightSensor.wait_for_light_if_competition"><code class="name flex">

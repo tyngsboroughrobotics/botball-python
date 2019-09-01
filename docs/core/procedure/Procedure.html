@@ -22,8 +22,12 @@
 <section id="section-intro">
 <details class="source">
 <summary>Source code</summary>
-<pre><code class="python">from botball import libwallaby
-from typing import List
+<pre><code class="python">try:
+    from typing import List
+except ImportError:
+    pass
+
+from botball import wallaby
 from datetime import datetime
 from .Step import Step
 
@@ -87,7 +91,7 @@ class Procedure(object):
             debug_print(f&#34;##END## step #{i + 1}: {step.name} in {step_elapsed} seconds&#34;)
 
             if in_between_delay &gt; 0:
-                libwallaby.msleep(in_between_delay)
+                wallaby.msleep(in_between_delay)
 
         procedure_end = datetime.now()
         procedure_elapsed = (procedure_end - procedure_start).total_seconds()
@@ -171,7 +175,7 @@ class Procedure(object):
             debug_print(f&#34;##END## step #{i + 1}: {step.name} in {step_elapsed} seconds&#34;)
 
             if in_between_delay &gt; 0:
-                libwallaby.msleep(in_between_delay)
+                wallaby.msleep(in_between_delay)
 
         procedure_end = datetime.now()
         procedure_elapsed = (procedure_end - procedure_start).total_seconds()
@@ -260,7 +264,7 @@ of steps.</p>
         debug_print(f&#34;##END## step #{i + 1}: {step.name} in {step_elapsed} seconds&#34;)
 
         if in_between_delay &gt; 0:
-            libwallaby.msleep(in_between_delay)
+            wallaby.msleep(in_between_delay)
 
     procedure_end = datetime.now()
     procedure_elapsed = (procedure_end - procedure_start).total_seconds()

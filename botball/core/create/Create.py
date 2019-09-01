@@ -1,4 +1,4 @@
-from botball import libwallaby
+from botball import wallaby
 from ..components import Direction, Motor
 from ..helpers import scale
 
@@ -28,11 +28,11 @@ class Create(object):
         self.speed = speed
 
     def __enter__(self):
-        libwallaby.create_connect()
-        libwallaby.msleep(1500)  # wait for the connection to finish establishing
+        wallaby.create_connect()
+        wallaby.msleep(1500)  # wait for the connection to finish establishing
 
     def __exit__(self, exception_type, exception_value, traceback):
-        libwallaby.create_disconnect()
+        wallaby.create_disconnect()
 
     # - Driving
 
@@ -49,13 +49,13 @@ class Create(object):
         ticks = scale(self.speed, 0, 1, 0, self.max_speed) \
             * direction.multiplier()
 
-        libwallaby.create_drive_straight(int(ticks))
+        wallaby.create_drive_straight(int(ticks))
 
         if not block:
             return
 
         def current_distance():
-            return libwallaby.get_create_distance()
+            return wallaby.get_create_distance()
 
         target_distance = current_distance() + (mm * direction.multiplier())
 
@@ -65,16 +65,16 @@ class Create(object):
             return target_distance - 2 <= current_distance() <= target_distance + 2
 
         while not within_target_distance():
-            libwallaby.msleep(5)
+            wallaby.msleep(5)
 
         if sleep:
-            libwallaby.msleep(Motor.default_sleep_time)
+            wallaby.msleep(Motor.default_sleep_time)
 
     def stop(self):
         """
         Stops the Create if it is moving.
         """
-        libwallaby.create_stop()
+        wallaby.create_stop()
 
     # - Constants
 

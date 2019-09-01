@@ -22,7 +22,7 @@
 <section id="section-intro">
 <details class="source">
 <summary>Source code</summary>
-<pre><code class="python">from botball import libwallaby
+<pre><code class="python">from botball import wallaby
 from .Motor import Motor
 from ..Direction import Direction
 
@@ -96,10 +96,10 @@ class WheelGroup(object):
         right_motor.move(right_direction, mm=right_distance_offset, block=block, sleep=False)
 
         if block:
-            libwallaby.off(left_motor.port)
+            wallaby.off(left_motor.port)
 
         if sleep:
-            libwallaby.msleep(Motor.default_sleep_time)
+            wallaby.msleep(Motor.default_sleep_time)
 
     def drive(
         self,
@@ -276,10 +276,10 @@ left and right wheel simultaneously.</p></section>
         right_motor.move(right_direction, mm=right_distance_offset, block=block, sleep=False)
 
         if block:
-            libwallaby.off(left_motor.port)
+            wallaby.off(left_motor.port)
 
         if sleep:
-            libwallaby.msleep(Motor.default_sleep_time)
+            wallaby.msleep(Motor.default_sleep_time)
 
     def drive(
         self,
@@ -486,10 +486,10 @@ unison.</li>
     right_motor.move(right_direction, mm=right_distance_offset, block=block, sleep=False)
 
     if block:
-        libwallaby.off(left_motor.port)
+        wallaby.off(left_motor.port)
 
     if sleep:
-        libwallaby.msleep(Motor.default_sleep_time)</code></pre>
+        wallaby.msleep(Motor.default_sleep_time)</code></pre>
 </details>
 </dd>
 <dt id="botball.core.components.devices.WheelGroup.WheelGroup.turn_left"><code class="name flex">

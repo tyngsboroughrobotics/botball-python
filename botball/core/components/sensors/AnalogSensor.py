@@ -1,4 +1,4 @@
-from botball import libwallaby
+from botball import wallaby
 from ..Component import Component
 
 
@@ -39,4 +39,4 @@ class AnalogSensor(Component):
     # - Readout
 
     def _readout(self) -> int:
-        return libwallaby.analog(self.port)
+        return wallaby.analog(self.port)

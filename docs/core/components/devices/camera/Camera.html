@@ -22,8 +22,12 @@
 <section id="section-intro">
 <details class="source">
 <summary>Source code</summary>
-<pre><code class="python">from botball import libwallaby
-from typing import Union, Optional
+<pre><code class="python">try:
+    from typing import Union, Optional
+except ImportError:
+    pass
+
+from botball import wallaby
 from .CameraTrackingColor import CameraTrackingColor
 from .Rectangle import Rectangle
 
@@ -68,17 +72,17 @@ class Camera(object):
         automatically converted.
 
         - **Warning:** If the camera is not connected to the robot, then the
-        program will crash as defined in `libwallaby`.
+        program will crash as defined in `wallaby`.
         &#34;&#34;&#34;
         self.tracking_color = tracking_color
 
     def __enter__(self):
-        libwallaby.camera_open()
+        wallaby.camera_open()
         self._change_color_to(self._tracking_color)
         self.refresh()
 
     def __exit__(self, exception_type, exception_value, traceback):
-        libwallaby.camera_close()
+        wallaby.camera_close()
 
     # - Refreshing camera
 
@@ -97,7 +101,7 @@ class Camera(object):
         number_of_times = frames or self.number_of_updates_during_refresh
 
         for _ in range(number_of_times):
-            libwallaby.camera_update()
+            wallaby.camera_update()
 
     # - Constants
 
@@ -113,7 +117,7 @@ class Camera(object):
 
     object_confidence_threshold: float = 0.42
     &#34;&#34;&#34;
-    The minimum value returned by `libwallaby`&#39;s `get_object_confidence()` for 
+    The minimum value returned by `wallaby`&#39;s `get_object_confidence()` for 
     an object to be recognized as &#34;trackable&#34;.
 
     If this value is inaccurate for your robot, you can change it. Do so as
@@ -150,7 +154,7 @@ class Camera(object):
         # .conf extension should NOT be provided.
         conf_name = f&#34;detect-{str(tracking_color)}&#34;
 
-        success = libwallaby.camera_load_config(conf_name) == 1
+        success = wallaby.camera_load_config(conf_name) == 1
 
         if not success:
             raise EnvironmentError(f&#34;Error while loading tracking color \
@@ -162,7 +166,7 @@ configuration file for color &#39;{str(tracking_color)}&#39;&#34;)
         &#34;&#34;&#34;
         The number of objects currently in the field of view.
         &#34;&#34;&#34;
-        return libwallaby.get_object_count(self.camera_channel)
+        return wallaby.get_object_count(self.camera_channel)
 
     def object_is_present(self) -&gt; bool:
         &#34;&#34;&#34;
@@ -181,7 +185,7 @@ configuration file for color &#39;{str(tracking_color)}&#39;&#34;)
         if self.number_of_objects() &lt;= object_number:
             return None
 
-        return libwallaby.get_object_bbox(self.camera_channel, object_number)
+        return wallaby.get_object_bbox(self.camera_channel, object_number)
 
     # - Distance
 
@@ -202,7 +206,7 @@ configuration file for color &#39;{str(tracking_color)}&#39;&#34;)
             return None
 
         object_height_px = float(object_bbox.height)
-        camera_height = float(libwallaby.get_camera_height()
+        camera_height = float(wallaby.get_camera_height()
                               - self.camera_height_offset)
 
         return camera_height * object_height / object_height_px
@@ -218,7 +222,7 @@ configuration file for color &#39;{str(tracking_color)}&#39;&#34;)
         if self.number_of_objects() &lt;= object_number:
             return None
 
-        return libwallaby.get_object_confidence(
+        return wallaby.get_object_confidence(
             self.camera_channel,
             object_number
         )
@@ -269,7 +273,7 @@ automatically converted.</p>
 </li>
 <li>
 <p><strong>Warning:</strong> If the camera is not connected to the robot, then the
-program will crash as defined in <code>libwallaby</code>.</p>
+program will crash as defined in <code>wallaby</code>.</p>
 </li>
 </ul></section>
 <details class="source">
@@ -314,17 +318,17 @@ program will crash as defined in <code>libwallaby</code>.</p>
         automatically converted.
 
         - **Warning:** If the camera is not connected to the robot, then the
-        program will crash as defined in `libwallaby`.
+        program will crash as defined in `wallaby`.
         &#34;&#34;&#34;
         self.tracking_color = tracking_color
 
     def __enter__(self):
-        libwallaby.camera_open()
+        wallaby.camera_open()
         self._change_color_to(self._tracking_color)
         self.refresh()
 
     def __exit__(self, exception_type, exception_value, traceback):
-        libwallaby.camera_close()
+        wallaby.camera_close()
 
     # - Refreshing camera
 
@@ -343,7 +347,7 @@ program will crash as defined in <code>libwallaby</code>.</p>
         number_of_times = frames or self.number_of_updates_during_refresh
 
         for _ in range(number_of_times):
-            libwallaby.camera_update()
+            wallaby.camera_update()
 
     # - Constants
 
@@ -359,7 +363,7 @@ program will crash as defined in <code>libwallaby</code>.</p>
 
     object_confidence_threshold: float = 0.42
     &#34;&#34;&#34;
-    The minimum value returned by `libwallaby`&#39;s `get_object_confidence()` for 
+    The minimum value returned by `wallaby`&#39;s `get_object_confidence()` for 
     an object to be recognized as &#34;trackable&#34;.
 
     If this value is inaccurate for your robot, you can change it. Do so as
@@ -396,7 +400,7 @@ program will crash as defined in <code>libwallaby</code>.</p>
         # .conf extension should NOT be provided.
         conf_name = f&#34;detect-{str(tracking_color)}&#34;
 
-        success = libwallaby.camera_load_config(conf_name) == 1
+        success = wallaby.camera_load_config(conf_name) == 1
 
         if not success:
             raise EnvironmentError(f&#34;Error while loading tracking color \
@@ -408,7 +412,7 @@ configuration file for color &#39;{str(tracking_color)}&#39;&#34;)
         &#34;&#34;&#34;
         The number of objects currently in the field of view.
         &#34;&#34;&#34;
-        return libwallaby.get_object_count(self.camera_channel)
+        return wallaby.get_object_count(self.camera_channel)
 
     def object_is_present(self) -&gt; bool:
         &#34;&#34;&#34;
@@ -427,7 +431,7 @@ configuration file for color &#39;{str(tracking_color)}&#39;&#34;)
         if self.number_of_objects() &lt;= object_number:
             return None
 
-        return libwallaby.get_object_bbox(self.camera_channel, object_number)
+        return wallaby.get_object_bbox(self.camera_channel, object_number)
 
     # - Distance
 
@@ -448,7 +452,7 @@ configuration file for color &#39;{str(tracking_color)}&#39;&#34;)
             return None
 
         object_height_px = float(object_bbox.height)
-        camera_height = float(libwallaby.get_camera_height()
+        camera_height = float(wallaby.get_camera_height()
                               - self.camera_height_offset)
 
         return camera_height * object_height / object_height_px
@@ -464,7 +468,7 @@ configuration file for color &#39;{str(tracking_color)}&#39;&#34;)
         if self.number_of_objects() &lt;= object_number:
             return None
 
-        return libwallaby.get_object_confidence(
+        return wallaby.get_object_confidence(
             self.camera_channel,
             object_number
         )
@@ -516,7 +520,7 @@ components.)</p></section>
 </dd>
 <dt id="botball.core.components.devices.camera.Camera.Camera.object_confidence_threshold"><code class="name">var <span class="ident">object_confidence_threshold</span></code></dt>
 <dd>
-<section class="desc"><p>The minimum value returned by <code>libwallaby</code>'s <code>get_object_confidence()</code> for
+<section class="desc"><p>The minimum value returned by <code>wallaby</code>'s <code>get_object_confidence()</code> for
 an object to be recognized as "trackable".</p>
 <p>If this value is inaccurate for your robot, you can change it. Do so as
 early in your program as possible (eg. before you create/initialize any
@@ -563,7 +567,7 @@ def tracking_color(self) -&gt; CameraTrackingColor:
     if self.number_of_objects() &lt;= object_number:
         return None
 
-    return libwallaby.get_object_confidence(
+    return wallaby.get_object_confidence(
         self.camera_channel,
         object_number
     )</code></pre>
@@ -599,7 +603,7 @@ for accurate results.</li>
         return None
 
     object_height_px = float(object_bbox.height)
-    camera_height = float(libwallaby.get_camera_height()
+    camera_height = float(wallaby.get_camera_height()
                           - self.camera_height_offset)
 
     return camera_height * object_height / object_height_px</code></pre>
@@ -616,7 +620,7 @@ for accurate results.</li>
     &#34;&#34;&#34;
     The number of objects currently in the field of view.
     &#34;&#34;&#34;
-    return libwallaby.get_object_count(self.camera_channel)</code></pre>
+    return wallaby.get_object_count(self.camera_channel)</code></pre>
 </details>
 </dd>
 <dt id="botball.core.components.devices.camera.Camera.Camera.object_bbox"><code class="name flex">
@@ -635,7 +639,7 @@ if the object is not found.</p></section>
     if self.number_of_objects() &lt;= object_number:
         return None
 
-    return libwallaby.get_object_bbox(self.camera_channel, object_number)</code></pre>
+    return wallaby.get_object_bbox(self.camera_channel, object_number)</code></pre>
 </details>
 </dd>
 <dt id="botball.core.components.devices.camera.Camera.Camera.object_is_present"><code class="name flex">
@@ -708,7 +712,7 @@ is changed.</p>
     number_of_times = frames or self.number_of_updates_during_refresh
 
     for _ in range(number_of_times):
-        libwallaby.camera_update()</code></pre>
+        wallaby.camera_update()</code></pre>
 </details>
 </dd>
 </dl>

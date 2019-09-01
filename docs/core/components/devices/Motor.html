@@ -22,7 +22,7 @@
 <section id="section-intro">
 <details class="source">
 <summary>Source code</summary>
-<pre><code class="python">from botball import libwallaby
+<pre><code class="python">from botball import wallaby
 from ..Movable import Movable
 from ..Direction import Direction
 from ...helpers.scale import scale 
@@ -57,23 +57,23 @@ class Motor(Movable):
         &#34;&#34;&#34;
         velocity = int(self._velocity() * direction.multiplier())
 
-        libwallaby.move_at_velocity(self.port, velocity)
+        wallaby.move_at_velocity(self.port, velocity)
 
         if block:
             distance_ticks = self._mm_to_ticks(mm)
             ms_to_sleep = int(self._ticks_to_ms(distance_ticks))
 
-            libwallaby.msleep(ms_to_sleep)
-            libwallaby.off(self.port) 
+            wallaby.msleep(ms_to_sleep)
+            wallaby.off(self.port)
 
         if sleep:
-            libwallaby.msleep(self.default_sleep_time)
+            wallaby.msleep(self.default_sleep_time)
 
     # - Constants
 
     motor_ticks_per_mm: float = 10 / 1.13
     &#34;&#34;&#34;
-    The number of motor &#34;ticks&#34; (`libwallaby`&#39;s internal motor unit) in one
+    The number of motor &#34;ticks&#34; (`wallaby`&#39;s internal motor unit) in one
     millimeter.
 
     If this value is inaccurate for your robot, you can change it. Do so as
@@ -83,7 +83,7 @@ class Motor(Movable):
 
     motor_ticks_per_second: float = 818
     &#34;&#34;&#34;
-    The number of motor &#34;ticks&#34; (`libwallaby`&#39;s internal motor unit) a
+    The number of motor &#34;ticks&#34; (`wallaby`&#39;s internal motor unit) a
     motor will travel at full speed in one second.
 
     If this value is inaccurate for your robot, you can change it. Do so as
@@ -160,23 +160,23 @@ class Motor(Movable):
         &#34;&#34;&#34;
         velocity = int(self._velocity() * direction.multiplier())
 
-        libwallaby.move_at_velocity(self.port, velocity)
+        wallaby.move_at_velocity(self.port, velocity)
 
         if block:
             distance_ticks = self._mm_to_ticks(mm)
             ms_to_sleep = int(self._ticks_to_ms(distance_ticks))
 
-            libwallaby.msleep(ms_to_sleep)
-            libwallaby.off(self.port) 
+            wallaby.msleep(ms_to_sleep)
+            wallaby.off(self.port)
 
         if sleep:
-            libwallaby.msleep(self.default_sleep_time)
+            wallaby.msleep(self.default_sleep_time)
 
     # - Constants
 
     motor_ticks_per_mm: float = 10 / 1.13
     &#34;&#34;&#34;
-    The number of motor &#34;ticks&#34; (`libwallaby`&#39;s internal motor unit) in one
+    The number of motor &#34;ticks&#34; (`wallaby`&#39;s internal motor unit) in one
     millimeter.
 
     If this value is inaccurate for your robot, you can change it. Do so as
@@ -186,7 +186,7 @@ class Motor(Movable):
 
     motor_ticks_per_second: float = 818
     &#34;&#34;&#34;
-    The number of motor &#34;ticks&#34; (`libwallaby`&#39;s internal motor unit) a
+    The number of motor &#34;ticks&#34; (`wallaby`&#39;s internal motor unit) a
     motor will travel at full speed in one second.
 
     If this value is inaccurate for your robot, you can change it. Do so as
@@ -234,7 +234,7 @@ components.)</p></section>
 </dd>
 <dt id="botball.core.components.devices.Motor.Motor.motor_ticks_per_mm"><code class="name">var <span class="ident">motor_ticks_per_mm</span></code></dt>
 <dd>
-<section class="desc"><p>The number of motor "ticks" (<code>libwallaby</code>'s internal motor unit) in one
+<section class="desc"><p>The number of motor "ticks" (<code>wallaby</code>'s internal motor unit) in one
 millimeter.</p>
 <p>If this value is inaccurate for your robot, you can change it. Do so as
 early in your program as possible (eg. before you create/initialize any
@@ -242,7 +242,7 @@ components.)</p></section>
 </dd>
 <dt id="botball.core.components.devices.Motor.Motor.motor_ticks_per_second"><code class="name">var <span class="ident">motor_ticks_per_second</span></code></dt>
 <dd>
-<section class="desc"><p>The number of motor "ticks" (<code>libwallaby</code>'s internal motor unit) a
+<section class="desc"><p>The number of motor "ticks" (<code>wallaby</code>'s internal motor unit) a
 motor will travel at full speed in one second.</p>
 <p>If this value is inaccurate for your robot, you can change it. Do so as
 early in your program as possible (eg. before you create/initialize any
@@ -300,17 +300,17 @@ future movements unreliable (not fun to debug!). If this is set to
     &#34;&#34;&#34;
     velocity = int(self._velocity() * direction.multiplier())
 
-    libwallaby.move_at_velocity(self.port, velocity)
+    wallaby.move_at_velocity(self.port, velocity)
 
     if block:
         distance_ticks = self._mm_to_ticks(mm)
         ms_to_sleep = int(self._ticks_to_ms(distance_ticks))
 
-        libwallaby.msleep(ms_to_sleep)
-        libwallaby.off(self.port) 
+        wallaby.msleep(ms_to_sleep)
+        wallaby.off(self.port)
 
     if sleep:
-        libwallaby.msleep(self.default_sleep_time)</code></pre>
+        wallaby.msleep(self.default_sleep_time)</code></pre>
 </details>
 </dd>
 </dl>

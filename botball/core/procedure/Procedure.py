@@ -3,7 +3,7 @@ try:
 except ImportError:
     pass
 
-from botball import libwallaby
+from botball import wallaby
 from datetime import datetime
 from .Step import Step
 
@@ -67,7 +67,7 @@ class Procedure(object):
             debug_print(f"##END## step #{i + 1}: {step.name} in {step_elapsed} seconds")
 
             if in_between_delay > 0:
-                libwallaby.msleep(in_between_delay)
+                wallaby.msleep(in_between_delay)
 
         procedure_end = datetime.now()
         procedure_elapsed = (procedure_end - procedure_start).total_seconds()

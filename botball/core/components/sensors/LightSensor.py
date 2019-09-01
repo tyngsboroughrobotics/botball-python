@@ -1,5 +1,5 @@
 import os
-from botball import libwallaby
+from botball import wallaby
 from .AnalogSensor import AnalogSensor
 
 
@@ -14,7 +14,7 @@ class LightSensor(AnalogSensor):
         robot does not start moving before the signal lights turn on at the
         competition.
         """
-        libwallaby.wait_for_light(self.port)
+        wallaby.wait_for_light(self.port)
 
     def wait_for_light_if_competition(self):
         """

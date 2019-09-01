@@ -1,4 +1,4 @@
-from botball import libwallaby
+from botball import wallaby
 from ..Component import Component
 
 
@@ -19,4 +19,4 @@ class DigitalSensor(Component):
         """
         This function should always return 1 or 0. 
         """ 
-        return libwallaby.digital(self.port)
+        return wallaby.digital(self.port)
