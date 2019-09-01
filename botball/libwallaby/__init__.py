@@ -5,5 +5,4 @@ try:
     from .bindings import *
     from ._bindings import *
 except ImportError:
-    print("ERROR: Using libwallaby on development machine")
-    exit(1)
+    pass
