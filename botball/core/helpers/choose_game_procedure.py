@@ -11,7 +11,7 @@ def choose_game_procedure(demobot: Procedure, create: Procedure, **run_args) -> 
     """
     Given two game procedures for a Demobot robot and a iRobot Create robot,
     returns a function that can be called to execute the appropriate procedure
-    with the appropriate settings given the environment variables.
+    with the appropriate settings given the configuration files.
 
     - `demobot`: The procedure to execute when running this program on a Demobot
     robot.
@@ -22,31 +22,35 @@ def choose_game_procedure(demobot: Procedure, create: Procedure, **run_args) -> 
     - `run_args`: Any additional arguments to pass to the `run` function of the
     chosen procedure.
 
-    ## Environment variables
+    ## Configuration files
 
-    The following environment variables will affect the function that is
-    returned:
+    The following files will affect the function that is returned:
 
-    - `BOTBALL_USE_DEMOBOT`: If set, returns the `run` function of the `demobot`
-    parameter.
+    - `/etc/ths-botball-conf/demobot`: If this exists, this function returns the
+    `run` function of the `demobot` parameter.
 
-    - `BOTBALL_USE_CREATE`: If set, returns the `run` function of the `create`
-    parameter.
+    - `/etc/ths-botball-conf/create`: If this exists, this function returns the
+    `run` function of the `create` parameter.
 
-        - If both of these are set, `BOTBALL_USE_DEMOBOT` has precedence.
-        - If neither of these are set, this function raises a `ValueError`.
+        - If both of these are set, `demobot` has precedence.
 
-    - `BOTBALL_USE_DEBUG`: If set in addition to one of the above, returns the
-    appropriate `run` function with its `debug` parameter set to `True`.
+        - If neither of these are set, this function raises a
+        `FileNotFoundError`.
+
+    - `/etc/ths-botball-conf/demobot`: If this exists in addition to one of the
+    above, this function returns the appropriate `run` function with its `debug`
+    parameter set to `True`.
     """
 
-    if "BOTBALL_USE_DEMOBOT" in os.environ:
+    config_path = "/etc/ths-botball-conf"
+
+    if os.path.exists(f"{config_path}/demobot"):
         procedure_to_use = demobot
-    elif "BOTBALL_USE_CREATE" in os.environ:
+    elif os.path.exists(f"{config_path}/demobot"):
         procedure_to_use = create
     else:
         raise ValueError("Neither BOTBALL_USE_DEMOBOT nor BOTBALL_USE_CREATE found in environment variables")
 
-    debug = os.getenv("BOTBALL_USE_DEBUG") == "true"
+    debug = os.path.exists(f"{config_path}/debug")
 
     return lambda: procedure_to_use.run(debug=debug, **run_args)
