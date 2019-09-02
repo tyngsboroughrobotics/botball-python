@@ -1,2 +1,2 @@
 from .Procedure import Procedure
-from .Step import Step
+from .Step import Step, step
