@@ -1,3 +1,3 @@
-from .AnalogSensor import *
-from .DigitalSensor import *
-from .LightSensor import *
+from .AnalogSensor import AnalogSensor
+from .DigitalSensor import DigitalSensor
+from .LightSensor import LightSensor

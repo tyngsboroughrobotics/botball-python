@@ -1,4 +1,4 @@
-from .camera import *
-from .Motor import * 
-from .Servo import * 
-from .WheelGroup import *
+from .camera import Camera, CameraTrackingColor, Rectangle
+from .Motor import Motor
+from .Servo import Servo
+from .WheelGroup import WheelGroup
