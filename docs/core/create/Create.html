@@ -40,22 +40,21 @@ class Create(object):
 
     def __init__(self, speed: float):
         &#34;&#34;&#34;
-        Initializes the Create and blocks until a connection is established. The
-        Create should only be used inside a `with` statement; for example:
-
-        &gt;&gt;&gt; with Create(speed=1.0) as create:
-        ...     create.drive(Direction.Forward, mm=100)
+        Initializes the Create and blocks until a connection is established.
 
         - **Warning:** If the controller is not connected to a Create or the
         Create is not turned on, then the program will freeze indefinitely.
         &#34;&#34;&#34;
         self.speed = speed
 
-    def __enter__(self):
         wallaby.create_connect()
         wallaby.msleep(1500)  # wait for the connection to finish establishing
 
-    def __exit__(self, exception_type, exception_value, traceback):
+    def disconnect(self):
+        &#34;&#34;&#34;
+        Manually disconnect the Create. This will be done automatically when
+        your program finishes running.
+        &#34;&#34;&#34;
         wallaby.create_disconnect()
 
     # - Driving
@@ -94,7 +93,7 @@ class Create(object):
         if sleep:
             wallaby.msleep(Motor.default_sleep_time)
 
-    def stop(self):
+    def stop_moving(self):
         &#34;&#34;&#34;
         Stops the Create if it is moving.
         &#34;&#34;&#34;
@@ -127,11 +126,7 @@ class Create(object):
 </code></dt>
 <dd>
 <section class="desc"><p>Represents a controller connected to an iRobot Create robot.</p>
-<p>Initializes the Create and blocks until a connection is established. The
-Create should only be used inside a <code>with</code> statement; for example:</p>
-<pre><code>&gt;&gt;&gt; with Create(speed=1.0) as create:
-...     create.drive(Direction.Forward, mm=100)
-</code></pre>
+<p>Initializes the Create and blocks until a connection is established.</p>
 <ul>
 <li><strong>Warning:</strong> If the controller is not connected to a Create or the
 Create is not turned on, then the program will freeze indefinitely.</li>
@@ -150,22 +145,21 @@ Create is not turned on, then the program will freeze indefinitely.</li>
 
     def __init__(self, speed: float):
         &#34;&#34;&#34;
-        Initializes the Create and blocks until a connection is established. The
-        Create should only be used inside a `with` statement; for example:
-
-        &gt;&gt;&gt; with Create(speed=1.0) as create:
-        ...     create.drive(Direction.Forward, mm=100)
+        Initializes the Create and blocks until a connection is established.
 
         - **Warning:** If the controller is not connected to a Create or the
         Create is not turned on, then the program will freeze indefinitely.
         &#34;&#34;&#34;
         self.speed = speed
 
-    def __enter__(self):
         wallaby.create_connect()
         wallaby.msleep(1500)  # wait for the connection to finish establishing
 
-    def __exit__(self, exception_type, exception_value, traceback):
+    def disconnect(self):
+        &#34;&#34;&#34;
+        Manually disconnect the Create. This will be done automatically when
+        your program finishes running.
+        &#34;&#34;&#34;
         wallaby.create_disconnect()
 
     # - Driving
@@ -204,7 +198,7 @@ Create is not turned on, then the program will freeze indefinitely.</li>
         if sleep:
             wallaby.msleep(Motor.default_sleep_time)
 
-    def stop(self):
+    def stop_moving(self):
         &#34;&#34;&#34;
         Stops the Create if it is moving.
         &#34;&#34;&#34;
@@ -237,6 +231,22 @@ components.)</p></section>
 </dl>
 <h3>Methods</h3>
 <dl>
+<dt id="botball.core.create.Create.Create.disconnect"><code class="name flex">
+<span>def <span class="ident">disconnect</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Manually disconnect the Create. This will be done automatically when
+your program finishes running.</p></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">def disconnect(self):
+    &#34;&#34;&#34;
+    Manually disconnect the Create. This will be done automatically when
+    your program finishes running.
+    &#34;&#34;&#34;
+    wallaby.create_disconnect()</code></pre>
+</details>
+</dd>
 <dt id="botball.core.create.Create.Create.drive"><code class="name flex">
 <span>def <span class="ident">drive</span></span>(<span>self, direction: <a title="botball.core.components.Direction.Direction" href="../components/Direction.html#botball.core.components.Direction.Direction">Direction</a>, mm: int, block: bool = True, sleep: bool = True)</span>
 </code></dt>
@@ -288,14 +298,14 @@ components.)</p></section>
         wallaby.msleep(Motor.default_sleep_time)</code></pre>
 </details>
 </dd>
-<dt id="botball.core.create.Create.Create.stop"><code class="name flex">
-<span>def <span class="ident">stop</span></span>(<span>self)</span>
+<dt id="botball.core.create.Create.Create.stop_moving"><code class="name flex">
+<span>def <span class="ident">stop_moving</span></span>(<span>self)</span>
 </code></dt>
 <dd>
 <section class="desc"><p>Stops the Create if it is moving.</p></section>
 <details class="source">
 <summary>Source code</summary>
-<pre><code class="python">def stop(self):
+<pre><code class="python">def stop_moving(self):
     &#34;&#34;&#34;
     Stops the Create if it is moving.
     &#34;&#34;&#34;
@@ -323,10 +333,11 @@ components.)</p></section>
 <li>
 <h4><code><a title="botball.core.create.Create.Create" href="#botball.core.create.Create.Create">Create</a></code></h4>
 <ul class="">
+<li><code><a title="botball.core.create.Create.Create.disconnect" href="#botball.core.create.Create.Create.disconnect">disconnect</a></code></li>
 <li><code><a title="botball.core.create.Create.Create.drive" href="#botball.core.create.Create.Create.drive">drive</a></code></li>
 <li><code><a title="botball.core.create.Create.Create.max_speed" href="#botball.core.create.Create.Create.max_speed">max_speed</a></code></li>
 <li><code><a title="botball.core.create.Create.Create.speed" href="#botball.core.create.Create.Create.speed">speed</a></code></li>
-<li><code><a title="botball.core.create.Create.Create.stop" href="#botball.core.create.Create.Create.stop">stop</a></code></li>
+<li><code><a title="botball.core.create.Create.Create.stop_moving" href="#botball.core.create.Create.Create.stop_moving">stop_moving</a></code></li>
 </ul>
 </li>
 </ul>

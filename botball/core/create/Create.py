@@ -16,22 +16,21 @@ class Create(object):
 
     def __init__(self, speed: float):
         """
-        Initializes the Create and blocks until a connection is established. The
-        Create should only be used inside a `with` statement; for example:
-
-        >>> with Create(speed=1.0) as create:
-        ...     create.drive(Direction.Forward, mm=100)
+        Initializes the Create and blocks until a connection is established.
 
         - **Warning:** If the controller is not connected to a Create or the
         Create is not turned on, then the program will freeze indefinitely.
         """
         self.speed = speed
 
-    def __enter__(self):
         wallaby.create_connect()
         wallaby.msleep(1500)  # wait for the connection to finish establishing
 
-    def __exit__(self, exception_type, exception_value, traceback):
+    def disconnect(self):
+        """
+        Manually disconnect the Create. This will be done automatically when
+        your program finishes running.
+        """
         wallaby.create_disconnect()
 
     # - Driving
@@ -70,7 +69,7 @@ class Create(object):
         if sleep:
             wallaby.msleep(Motor.default_sleep_time)
 
-    def stop(self):
+    def stop_moving(self):
         """
         Stops the Create if it is moving.
         """
