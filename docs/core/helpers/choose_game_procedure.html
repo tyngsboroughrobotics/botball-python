@@ -73,7 +73,7 @@ def choose_game_procedure(demobot: Procedure, create: Procedure, **run_args) -&g
     elif os.path.exists(f&#34;{config_path}/demobot&#34;):
         procedure_to_use = create
     else:
-        raise ValueError(&#34;Neither BOTBALL_USE_DEMOBOT nor BOTBALL_USE_CREATE found in environment variables&#34;)
+        raise FileNotFoundError(&#34;Neither BOTBALL_USE_DEMOBOT nor BOTBALL_USE_CREATE found in environment variables&#34;)
 
     debug = os.path.exists(f&#34;{config_path}/debug&#34;)
 
@@ -178,7 +178,7 @@ parameter set to <code>True</code>.</p>
     elif os.path.exists(f&#34;{config_path}/demobot&#34;):
         procedure_to_use = create
     else:
-        raise ValueError(&#34;Neither BOTBALL_USE_DEMOBOT nor BOTBALL_USE_CREATE found in environment variables&#34;)
+        raise FileNotFoundError(&#34;Neither BOTBALL_USE_DEMOBOT nor BOTBALL_USE_CREATE found in environment variables&#34;)
 
     debug = os.path.exists(f&#34;{config_path}/debug&#34;)
 

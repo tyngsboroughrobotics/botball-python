@@ -1,4 +1,4 @@
-documentation:
+pdoc:
 	@# Remove existing folders
 	@rm -rf docs/core docs/wallaby
 	@rm -f docs/index.html

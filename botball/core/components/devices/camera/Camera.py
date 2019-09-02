@@ -41,7 +41,7 @@ class Camera(object):
         used inside a `with` statement; for example:
 
         >>> with Camera(tracking_color="red") as camera:
-                print(camera.number_of_objects())
+        ...     print(camera.number_of_objects())
 
         - `tracking_color`: This can either be a CameraTrackingColor or a
         string representing a CameraTrackingColor, which will be
@@ -128,13 +128,12 @@ class Camera(object):
     def _change_color_to(self, tracking_color: CameraTrackingColor):
         # The name of the configuration file to get the tracking info from. The 
         # .conf extension should NOT be provided.
-        conf_name = f"detect-{str(tracking_color)}"
+        conf_name = "detect-" + str(tracking_color)
 
-        success = wallaby.camera_load_config(conf_name) == 1
+        success = wallaby.camera_load_config(bytes(conf_name)) == 1
 
         if not success:
-            raise EnvironmentError(f"Error while loading tracking color \
-configuration file for color '{str(tracking_color)}'")
+            raise EnvironmentError(f"Error while loading tracking color configuration file for color '{str(tracking_color)}'")
 
     # - Object presence
 

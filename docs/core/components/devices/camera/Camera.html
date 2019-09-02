@@ -65,7 +65,7 @@ class Camera(object):
         used inside a `with` statement; for example:
 
         &gt;&gt;&gt; with Camera(tracking_color=&#34;red&#34;) as camera:
-                print(camera.number_of_objects())
+        ...     print(camera.number_of_objects())
 
         - `tracking_color`: This can either be a CameraTrackingColor or a
         string representing a CameraTrackingColor, which will be
@@ -152,13 +152,12 @@ class Camera(object):
     def _change_color_to(self, tracking_color: CameraTrackingColor):
         # The name of the configuration file to get the tracking info from. The 
         # .conf extension should NOT be provided.
-        conf_name = f&#34;detect-{str(tracking_color)}&#34;
+        conf_name = &#34;detect-&#34; + str(tracking_color)
 
-        success = wallaby.camera_load_config(conf_name) == 1
+        success = wallaby.camera_load_config(bytes(conf_name)) == 1
 
         if not success:
-            raise EnvironmentError(f&#34;Error while loading tracking color \
-configuration file for color &#39;{str(tracking_color)}&#39;&#34;)
+            raise EnvironmentError(f&#34;Error while loading tracking color configuration file for color &#39;{str(tracking_color)}&#39;&#34;)
 
     # - Object presence
 
@@ -263,7 +262,7 @@ configuration file for color &#39;{str(tracking_color)}&#39;&#34;)
 <p>Initializes the camera with a tracking color. The camera should only be
 used inside a <code>with</code> statement; for example:</p>
 <pre><code>&gt;&gt;&gt; with Camera(tracking_color="red") as camera:
-        print(camera.number_of_objects())
+...     print(camera.number_of_objects())
 </code></pre>
 <ul>
 <li>
@@ -311,7 +310,7 @@ program will crash as defined in <code>wallaby</code>.</p>
         used inside a `with` statement; for example:
 
         &gt;&gt;&gt; with Camera(tracking_color=&#34;red&#34;) as camera:
-                print(camera.number_of_objects())
+        ...     print(camera.number_of_objects())
 
         - `tracking_color`: This can either be a CameraTrackingColor or a
         string representing a CameraTrackingColor, which will be
@@ -398,13 +397,12 @@ program will crash as defined in <code>wallaby</code>.</p>
     def _change_color_to(self, tracking_color: CameraTrackingColor):
         # The name of the configuration file to get the tracking info from. The 
         # .conf extension should NOT be provided.
-        conf_name = f&#34;detect-{str(tracking_color)}&#34;
+        conf_name = &#34;detect-&#34; + str(tracking_color)
 
-        success = wallaby.camera_load_config(conf_name) == 1
+        success = wallaby.camera_load_config(bytes(conf_name)) == 1
 
         if not success:
-            raise EnvironmentError(f&#34;Error while loading tracking color \
-configuration file for color &#39;{str(tracking_color)}&#39;&#34;)
+            raise EnvironmentError(f&#34;Error while loading tracking color configuration file for color &#39;{str(tracking_color)}&#39;&#34;)
 
     # - Object presence
 
