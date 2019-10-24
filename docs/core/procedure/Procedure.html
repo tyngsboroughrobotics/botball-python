@@ -77,18 +77,18 @@ class Procedure(object):
                 print(string)
 
         procedure_start = datetime.now()
-        debug_print(f&#34;#START# procedure {self.name}&#34;)
+        debug_print(f&#34;[ START ] procedure {self.name}&#34;)
 
         for i, step in enumerate(self.steps):
             step_start = datetime.now()
-            debug_print(f&#34;#START# step #{i + 1}: {step.name}&#34;)
+            debug_print(f&#34;[ START ] step #{i + 1}: {step.name}&#34;)
 
             step.run(debug)
             
             step_end = datetime.now()
             step_elapsed = (step_end - step_start).total_seconds()
 
-            debug_print(f&#34;##END## step #{i + 1}: {step.name} in {step_elapsed} seconds&#34;)
+            debug_print(f&#34;[  END  ] step #{i + 1}: {step.name} - took {step_elapsed} seconds&#34;)
 
             if in_between_delay &gt; 0:
                 wallaby.msleep(in_between_delay)
@@ -96,7 +96,7 @@ class Procedure(object):
         procedure_end = datetime.now()
         procedure_elapsed = (procedure_end - procedure_start).total_seconds()
 
-        debug_print(f&#34;##END## procedure {self.name} in {procedure_elapsed} seconds&#34;)</code></pre>
+        debug_print(f&#34;[  END  ] procedure {self.name} - took {procedure_elapsed} seconds&#34;)</code></pre>
 </details>
 </section>
 <section>
@@ -161,18 +161,18 @@ class Procedure(object):
                 print(string)
 
         procedure_start = datetime.now()
-        debug_print(f&#34;#START# procedure {self.name}&#34;)
+        debug_print(f&#34;[ START ] procedure {self.name}&#34;)
 
         for i, step in enumerate(self.steps):
             step_start = datetime.now()
-            debug_print(f&#34;#START# step #{i + 1}: {step.name}&#34;)
+            debug_print(f&#34;[ START ] step #{i + 1}: {step.name}&#34;)
 
             step.run(debug)
             
             step_end = datetime.now()
             step_elapsed = (step_end - step_start).total_seconds()
 
-            debug_print(f&#34;##END## step #{i + 1}: {step.name} in {step_elapsed} seconds&#34;)
+            debug_print(f&#34;[  END  ] step #{i + 1}: {step.name} - took {step_elapsed} seconds&#34;)
 
             if in_between_delay &gt; 0:
                 wallaby.msleep(in_between_delay)
@@ -180,7 +180,7 @@ class Procedure(object):
         procedure_end = datetime.now()
         procedure_elapsed = (procedure_end - procedure_start).total_seconds()
 
-        debug_print(f&#34;##END## procedure {self.name} in {procedure_elapsed} seconds&#34;)</code></pre>
+        debug_print(f&#34;[  END  ] procedure {self.name} - took {procedure_elapsed} seconds&#34;)</code></pre>
 </details>
 <h3>Class variables</h3>
 <dl>
@@ -250,18 +250,18 @@ of steps.</p>
             print(string)
 
     procedure_start = datetime.now()
-    debug_print(f&#34;#START# procedure {self.name}&#34;)
+    debug_print(f&#34;[ START ] procedure {self.name}&#34;)
 
     for i, step in enumerate(self.steps):
         step_start = datetime.now()
-        debug_print(f&#34;#START# step #{i + 1}: {step.name}&#34;)
+        debug_print(f&#34;[ START ] step #{i + 1}: {step.name}&#34;)
 
         step.run(debug)
         
         step_end = datetime.now()
         step_elapsed = (step_end - step_start).total_seconds()
 
-        debug_print(f&#34;##END## step #{i + 1}: {step.name} in {step_elapsed} seconds&#34;)
+        debug_print(f&#34;[  END  ] step #{i + 1}: {step.name} - took {step_elapsed} seconds&#34;)
 
         if in_between_delay &gt; 0:
             wallaby.msleep(in_between_delay)
@@ -269,7 +269,7 @@ of steps.</p>
     procedure_end = datetime.now()
     procedure_elapsed = (procedure_end - procedure_start).total_seconds()
 
-    debug_print(f&#34;##END## procedure {self.name} in {procedure_elapsed} seconds&#34;)</code></pre>
+    debug_print(f&#34;[  END  ] procedure {self.name} - took {procedure_elapsed} seconds&#34;)</code></pre>
 </details>
 </dd>
 </dl>
