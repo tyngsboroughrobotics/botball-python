@@ -31,11 +31,65 @@ import os
 from ..procedure import Procedure
 
 
+class RobotConfig(object):
+    &#34;&#34;&#34;
+    Represents the configuration of the target robot controller.
+    &#34;&#34;&#34;
+
+    robot_type: str
+    &#34;&#34;&#34;
+    The type of robot targeted. This will either be `&#34;demobot&#34;` or `&#34;create&#34;`.
+    &#34;&#34;&#34;
+
+    debug_enabled: bool
+    &#34;&#34;&#34;
+    Whether debugging is enabled on the target robot.
+    &#34;&#34;&#34;
+
+    def __init__(self):
+        &#34;&#34;&#34;
+        Create a new instance of `RobotConfig` with the current configuration
+        from the filesystem.
+
+        ## Configuration files
+
+        The following files will affect the configuration:
+
+        - `/etc/ths-botball-conf/demobot`: If this exists, `robot_type` is set
+        to `&#34;demobot&#34;`.
+
+        - `/etc/ths-botball-conf/create`: If this exists, `robot_type` is set to
+        `&#34;create&#34;`.
+
+            - If both of these are set, `demobot` has precedence.
+
+            - If neither of these are set, a `FileNotFoundError` is raised.
+
+        - `/etc/ths-botball-conf/demobot`: If this exists in addition to one of
+        the above, `debug_enabled` is set to `True`.
+        &#34;&#34;&#34;
+
+        if os.path.exists(f&#34;{RobotConfig.config_path}/demobot&#34;):
+            self.robot_type = &#34;demobot&#34;
+        elif os.path.exists(f&#34;{RobotConfig.config_path}/demobot&#34;):
+            self.robot_type = &#34;create&#34;
+        else:
+            raise FileNotFoundError(&#34;Robot controller not configured as Demobot or Create&#34;)
+
+        self.debug_enabled = os.path.exists(f&#34;{RobotConfig.config_path}/debug&#34;)
+
+    config_path = &#34;/etc/ths-botball-conf&#34;
+    &#34;&#34;&#34;
+    The path to the configuration files on the robot. You shouldn&#39;t need to
+    change this if you use the default project setup.
+    &#34;&#34;&#34;
+
+
 def choose_game_procedure(demobot: Procedure, create: Procedure, **run_args) -&gt; Callable[[], None]:
     &#34;&#34;&#34;
     Given two game procedures for a Demobot robot and a iRobot Create robot,
     returns a function that can be called to execute the appropriate procedure
-    with the appropriate settings given the configuration files.
+    with the appropriate settings given the current robot configuration.
 
     - `demobot`: The procedure to execute when running this program on a Demobot
     robot.
@@ -45,39 +99,16 @@ def choose_game_procedure(demobot: Procedure, create: Procedure, **run_args) -&g
 
     - `run_args`: Any additional arguments to pass to the `run` function of the
     chosen procedure.
-
-    ## Configuration files
-
-    The following files will affect the function that is returned:
-
-    - `/etc/ths-botball-conf/demobot`: If this exists, this function returns the
-    `run` function of the `demobot` parameter.
-
-    - `/etc/ths-botball-conf/create`: If this exists, this function returns the
-    `run` function of the `create` parameter.
-
-        - If both of these are set, `demobot` has precedence.
-
-        - If neither of these are set, this function raises a
-        `FileNotFoundError`.
-
-    - `/etc/ths-botball-conf/demobot`: If this exists in addition to one of the
-    above, this function returns the appropriate `run` function with its `debug`
-    parameter set to `True`.
     &#34;&#34;&#34;
 
-    config_path = &#34;/etc/ths-botball-conf&#34;
+    config = RobotConfig()
 
-    if os.path.exists(f&#34;{config_path}/demobot&#34;):
+    if config.type == &#34;demobot&#34;:
         procedure_to_use = demobot
-    elif os.path.exists(f&#34;{config_path}/demobot&#34;):
-        procedure_to_use = create
     else:
-        raise FileNotFoundError(&#34;Neither BOTBALL_USE_DEMOBOT nor BOTBALL_USE_CREATE found in environment variables&#34;)
+        procedure_to_use = create
 
-    debug = os.path.exists(f&#34;{config_path}/debug&#34;)
-
-    return lambda: procedure_to_use.run(debug=debug, **run_args)</code></pre>
+    return lambda: procedure_to_use.run(debug=config.debug_enabled, **run_args)</code></pre>
 </details>
 </section>
 <section>
@@ -93,7 +124,7 @@ def choose_game_procedure(demobot: Procedure, create: Procedure, **run_args) -&g
 <dd>
 <section class="desc"><p>Given two game procedures for a Demobot robot and a iRobot Create robot,
 returns a function that can be called to execute the appropriate procedure
-with the appropriate settings given the configuration files.</p>
+with the appropriate settings given the current robot configuration.</p>
 <ul>
 <li>
 <p><code>demobot</code>: The procedure to execute when running this program on a Demobot
@@ -107,32 +138,6 @@ Create robot.</p>
 <p><code>run_args</code>: Any additional arguments to pass to the <code>run</code> function of the
 chosen procedure.</p>
 </li>
-</ul>
-<h2 id="configuration-files">Configuration files</h2>
-<p>The following files will affect the function that is returned:</p>
-<ul>
-<li>
-<p><code>/etc/ths-botball-conf/demobot</code>: If this exists, this function returns the
-<code>run</code> function of the <code>demobot</code> parameter.</p>
-</li>
-<li>
-<p><code>/etc/ths-botball-conf/create</code>: If this exists, this function returns the
-<code>run</code> function of the <code>create</code> parameter.</p>
-<ul>
-<li>
-<p>If both of these are set, <code>demobot</code> has precedence.</p>
-</li>
-<li>
-<p>If neither of these are set, this function raises a
-<code>FileNotFoundError</code>.</p>
-</li>
-</ul>
-</li>
-<li>
-<p><code>/etc/ths-botball-conf/demobot</code>: If this exists in addition to one of the
-above, this function returns the appropriate <code>run</code> function with its <code>debug</code>
-parameter set to <code>True</code>.</p>
-</li>
 </ul></section>
 <details class="source">
 <summary>Source code</summary>
@@ -140,7 +145,7 @@ parameter set to <code>True</code>.</p>
     &#34;&#34;&#34;
     Given two game procedures for a Demobot robot and a iRobot Create robot,
     returns a function that can be called to execute the appropriate procedure
-    with the appropriate settings given the configuration files.
+    with the appropriate settings given the current robot configuration.
 
     - `demobot`: The procedure to execute when running this program on a Demobot
     robot.
@@ -150,44 +155,127 @@ parameter set to <code>True</code>.</p>
 
     - `run_args`: Any additional arguments to pass to the `run` function of the
     chosen procedure.
-
-    ## Configuration files
-
-    The following files will affect the function that is returned:
-
-    - `/etc/ths-botball-conf/demobot`: If this exists, this function returns the
-    `run` function of the `demobot` parameter.
-
-    - `/etc/ths-botball-conf/create`: If this exists, this function returns the
-    `run` function of the `create` parameter.
-
-        - If both of these are set, `demobot` has precedence.
-
-        - If neither of these are set, this function raises a
-        `FileNotFoundError`.
-
-    - `/etc/ths-botball-conf/demobot`: If this exists in addition to one of the
-    above, this function returns the appropriate `run` function with its `debug`
-    parameter set to `True`.
     &#34;&#34;&#34;
 
-    config_path = &#34;/etc/ths-botball-conf&#34;
+    config = RobotConfig()
 
-    if os.path.exists(f&#34;{config_path}/demobot&#34;):
+    if config.type == &#34;demobot&#34;:
         procedure_to_use = demobot
-    elif os.path.exists(f&#34;{config_path}/demobot&#34;):
-        procedure_to_use = create
     else:
-        raise FileNotFoundError(&#34;Neither BOTBALL_USE_DEMOBOT nor BOTBALL_USE_CREATE found in environment variables&#34;)
+        procedure_to_use = create
 
-    debug = os.path.exists(f&#34;{config_path}/debug&#34;)
-
-    return lambda: procedure_to_use.run(debug=debug, **run_args)</code></pre>
+    return lambda: procedure_to_use.run(debug=config.debug_enabled, **run_args)</code></pre>
 </details>
 </dd>
 </dl>
 </section>
 <section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="botball.core.helpers.choose_game_procedure.RobotConfig"><code class="flex name class">
+<span>class <span class="ident">RobotConfig</span></span>
+</code></dt>
+<dd>
+<section class="desc"><p>Represents the configuration of the target robot controller.</p>
+<p>Create a new instance of <a title="botball.core.helpers.choose_game_procedure.RobotConfig" href="#botball.core.helpers.choose_game_procedure.RobotConfig"><code>RobotConfig</code></a> with the current configuration
+from the filesystem.</p>
+<h2 id="configuration-files">Configuration files</h2>
+<p>The following files will affect the configuration:</p>
+<ul>
+<li>
+<p><code>/etc/ths-botball-conf/demobot</code>: If this exists, <code>robot_type</code> is set
+to <code>"demobot"</code>.</p>
+</li>
+<li>
+<p><code>/etc/ths-botball-conf/create</code>: If this exists, <code>robot_type</code> is set to
+<code>"create"</code>.</p>
+<ul>
+<li>
+<p>If both of these are set, <code>demobot</code> has precedence.</p>
+</li>
+<li>
+<p>If neither of these are set, a <code>FileNotFoundError</code> is raised.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>/etc/ths-botball-conf/demobot</code>: If this exists in addition to one of
+the above, <code>debug_enabled</code> is set to <code>True</code>.</p>
+</li>
+</ul></section>
+<details class="source">
+<summary>Source code</summary>
+<pre><code class="python">class RobotConfig(object):
+    &#34;&#34;&#34;
+    Represents the configuration of the target robot controller.
+    &#34;&#34;&#34;
+
+    robot_type: str
+    &#34;&#34;&#34;
+    The type of robot targeted. This will either be `&#34;demobot&#34;` or `&#34;create&#34;`.
+    &#34;&#34;&#34;
+
+    debug_enabled: bool
+    &#34;&#34;&#34;
+    Whether debugging is enabled on the target robot.
+    &#34;&#34;&#34;
+
+    def __init__(self):
+        &#34;&#34;&#34;
+        Create a new instance of `RobotConfig` with the current configuration
+        from the filesystem.
+
+        ## Configuration files
+
+        The following files will affect the configuration:
+
+        - `/etc/ths-botball-conf/demobot`: If this exists, `robot_type` is set
+        to `&#34;demobot&#34;`.
+
+        - `/etc/ths-botball-conf/create`: If this exists, `robot_type` is set to
+        `&#34;create&#34;`.
+
+            - If both of these are set, `demobot` has precedence.
+
+            - If neither of these are set, a `FileNotFoundError` is raised.
+
+        - `/etc/ths-botball-conf/demobot`: If this exists in addition to one of
+        the above, `debug_enabled` is set to `True`.
+        &#34;&#34;&#34;
+
+        if os.path.exists(f&#34;{RobotConfig.config_path}/demobot&#34;):
+            self.robot_type = &#34;demobot&#34;
+        elif os.path.exists(f&#34;{RobotConfig.config_path}/demobot&#34;):
+            self.robot_type = &#34;create&#34;
+        else:
+            raise FileNotFoundError(&#34;Robot controller not configured as Demobot or Create&#34;)
+
+        self.debug_enabled = os.path.exists(f&#34;{RobotConfig.config_path}/debug&#34;)
+
+    config_path = &#34;/etc/ths-botball-conf&#34;
+    &#34;&#34;&#34;
+    The path to the configuration files on the robot. You shouldn&#39;t need to
+    change this if you use the default project setup.
+    &#34;&#34;&#34;</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="botball.core.helpers.choose_game_procedure.RobotConfig.config_path"><code class="name">var <span class="ident">config_path</span></code></dt>
+<dd>
+<section class="desc"><p>The path to the configuration files on the robot. You shouldn't need to
+change this if you use the default project setup.</p></section>
+</dd>
+<dt id="botball.core.helpers.choose_game_procedure.RobotConfig.debug_enabled"><code class="name">var <span class="ident">debug_enabled</span></code></dt>
+<dd>
+<section class="desc"><p>Whether debugging is enabled on the target robot.</p></section>
+</dd>
+<dt id="botball.core.helpers.choose_game_procedure.RobotConfig.robot_type"><code class="name">var <span class="ident">robot_type</span></code></dt>
+<dd>
+<section class="desc"><p>The type of robot targeted. This will either be <code>"demobot"</code> or <code>"create"</code>.</p></section>
+</dd>
+</dl>
+</dd>
+</dl>
 </section>
 </article>
 <nav id="sidebar">
@@ -204,6 +292,18 @@ parameter set to <code>True</code>.</p>
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="">
 <li><code><a title="botball.core.helpers.choose_game_procedure.choose_game_procedure" href="#botball.core.helpers.choose_game_procedure.choose_game_procedure">choose_game_procedure</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="botball.core.helpers.choose_game_procedure.RobotConfig" href="#botball.core.helpers.choose_game_procedure.RobotConfig">RobotConfig</a></code></h4>
+<ul class="">
+<li><code><a title="botball.core.helpers.choose_game_procedure.RobotConfig.config_path" href="#botball.core.helpers.choose_game_procedure.RobotConfig.config_path">config_path</a></code></li>
+<li><code><a title="botball.core.helpers.choose_game_procedure.RobotConfig.debug_enabled" href="#botball.core.helpers.choose_game_procedure.RobotConfig.debug_enabled">debug_enabled</a></code></li>
+<li><code><a title="botball.core.helpers.choose_game_procedure.RobotConfig.robot_type" href="#botball.core.helpers.choose_game_procedure.RobotConfig.robot_type">robot_type</a></code></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
