@@ -31,6 +31,8 @@ class Servo(Movable):
         (rightmost position).
         """
 
+        self.enable()
+
         initial_position = self._position 
 
         # Limit the servo range to within safe boundaries
