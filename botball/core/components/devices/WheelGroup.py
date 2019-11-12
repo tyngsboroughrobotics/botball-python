@@ -116,7 +116,7 @@ class WheelGroup(object):
         See `Motor.move()` for information on the other parameters.
         """
 
-        distance = self.turn_amount * degrees
+        distance = self.turn_amount(degrees) * degrees
 
         self.drive_with(
             left_direction=Direction.Forward,
@@ -139,7 +139,7 @@ class WheelGroup(object):
         See `Motor.move()` for information on the other parameters.
         """
 
-        distance = self.turn_amount * degrees
+        distance = self.turn_amount(degrees) * degrees
 
         self.drive_with(
             left_direction=Direction.Backward,
@@ -153,13 +153,12 @@ class WheelGroup(object):
 
     # - Configuration
 
-    turn_amount: float = 0.86
-    """
-    The distance (in mm) forward the left wheel and backward the right wheel 
-    should travel when a wheel group is performing a clockwise turn, and 
-    vice versa.
+    @staticmethod
+    def turn_amount(degrees) -> float:
+        """
+        The distance (in mm) forward the left wheel and backward the right wheel
+        should travel when a wheel group is performing a clockwise turn, and
+        vice versa.
+        """
+        return -2.781096509 * (10 ** -6) * (degrees ** 2) + 1.922759857 * (10 ** -3) * degrees + 1.093333333
 
-    If this value is inaccurate for your robot, you can change it. Do so as
-    early in your program as possible (eg. before you create/initialize any
-    components.)
-    """
