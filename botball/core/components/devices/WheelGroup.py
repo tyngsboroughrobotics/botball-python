@@ -159,6 +159,14 @@ class WheelGroup(object):
         The distance (in mm) forward the left wheel and backward the right wheel
         should travel when a wheel group is performing a clockwise turn, and
         vice versa.
+
+        This function has been generated using regression for the following turn
+        amounts:
+
+        - 45 degrees = 1.175
+        - 90 degrees = 1.2425
+        - 180 degrees = 1.35
+        - 360 degrees = 1.425
         """
         return -2.781096509 * (10 ** -6) * (degrees ** 2) + 1.922759857 * (10 ** -3) * degrees + 1.093333333
 
