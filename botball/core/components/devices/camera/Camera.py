@@ -35,6 +35,14 @@ class Camera(object):
         self._change_color_to(self._tracking_color)
         self.refresh()
 
+    @property
+    def height(self) -> int:
+        """
+        The height of the camera frame in pixels, offset by
+        `Camera.camera_height_offset`.
+        """
+        return wallaby.get_camera_height() - self.camera_height_offset
+
     def __init__(self, tracking_color: Union[CameraTrackingColor, str]):
         """ 
         Initializes the camera with a tracking color. The camera should only be 
@@ -181,10 +189,8 @@ class Camera(object):
             return None
 
         object_height_px = float(object_bbox.height)
-        camera_height = float(wallaby.get_camera_height()
-                              - self.camera_height_offset)
 
-        return camera_height * object_height / object_height_px
+        return self.height * object_height / object_height_px
 
     # - Confidence
 
