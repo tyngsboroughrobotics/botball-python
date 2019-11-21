@@ -54,8 +54,4 @@ Some knowledge of Python is required; some knowledge of the terminal would be us
 
 ## Creating your project
 
-Because Botball for Python's wrappers have already been written by us, all you need to do is create a Python project with the code you want to run during matches. Luckily this process is super simple because we wrote a program to generate it all for you!
-
-1. Open your terminal (on Windows, use WSL or Git Bash) and run `...`.
-
-2. Lorem ipsum dolor sit amet
+Because Botball for Python's wrappers have already been written by us, all you need to do is create a Python project with the code you want to run during matches. We've provided a template project for you to get started, available [here](https://github.com/tyngsboroughrobotics/game2020/tree/template). Get in touch if you have any questions — happy hacking!
