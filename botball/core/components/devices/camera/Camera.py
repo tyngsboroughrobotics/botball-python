@@ -65,6 +65,8 @@ class Camera(object):
         self._change_color_to(self._tracking_color)
         self.refresh()
 
+        return self
+
     def __exit__(self, exception_type, exception_value, traceback):
         wallaby.camera_close()
 
