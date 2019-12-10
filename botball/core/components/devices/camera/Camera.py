@@ -68,7 +68,7 @@ class Camera(object):
         print("[Camera] Connected to USB camera...")
         self._change_color_to(self._tracking_color)
         print("[Camera] Refreshing frames...")
-        # self.refresh()
+        self.refresh()
         print("[Camera] Connected")
 
         return self
