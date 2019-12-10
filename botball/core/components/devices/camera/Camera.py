@@ -64,18 +64,18 @@ class Camera(object):
     def __enter__(self):
         time.sleep(0.25)
         print("[Camera] Connecting...")
-        # wallaby.camera_open()
+        wallaby.camera_open()
         time.sleep(0.25)
         print("[Camera] Connected to USB camera...")
-        # self._change_color_to(self._tracking_color)
-        # self.refresh()
+        self._change_color_to(self._tracking_color)
+        self.refresh()
         print("[Camera] Connected")
 
         return self
 
     def __exit__(self, exception_type, exception_value, traceback):
         print("[Camera] Disconnecting...")
-        # wallaby.camera_close()
+        wallaby.camera_close()
         print("[Camera] Disconnected")
 
     # - Refreshing camera

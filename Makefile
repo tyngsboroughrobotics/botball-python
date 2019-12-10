@@ -33,3 +33,6 @@ build:
 	@# Restore files that shouldn't be converted to Python 2 because they are
 	@# already compatible
 	@cp -f botball/core/helpers/enum.py _py2_build/botball/core/helpers/enum.py
+
+	@# Remove cache files
+	find . -name "*.pyc" -type f -delete
