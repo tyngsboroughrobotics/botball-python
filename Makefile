@@ -35,4 +35,4 @@ build:
 	@cp -f botball/core/helpers/enum.py _py2_build/botball/core/helpers/enum.py
 
 	@# Remove cache files
-	find . -name "*.pyc" -type f -delete
+	@find . -name "*.pyc" -type f -delete
