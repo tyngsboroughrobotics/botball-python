@@ -3,6 +3,7 @@ try:
 except ImportError:
     pass
 
+import time
 from botball import wallaby
 from .CameraTrackingColor import CameraTrackingColor
 from .Rectangle import Rectangle
@@ -61,14 +62,21 @@ class Camera(object):
         self.tracking_color = tracking_color
 
     def __enter__(self):
-        wallaby.camera_open()
-        self._change_color_to(self._tracking_color)
-        self.refresh()
+        time.sleep(0.25)
+        print("[Camera] Connecting...")
+        # wallaby.camera_open()
+        time.sleep(0.25)
+        print("[Camera] Connected to USB camera...")
+        # self._change_color_to(self._tracking_color)
+        # self.refresh()
+        print("[Camera] Connected")
 
         return self
 
     def __exit__(self, exception_type, exception_value, traceback):
-        wallaby.camera_close()
+        print("[Camera] Disconnecting...")
+        # wallaby.camera_close()
+        print("[Camera] Disconnected")
 
     # - Refreshing camera
 
