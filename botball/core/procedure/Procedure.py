@@ -1,5 +1,5 @@
 try:
-    from typing import List
+    from typing import List, Optional
 except ImportError:
     pass
 
@@ -15,12 +15,12 @@ class Procedure(object):
 
     name: str 
 
-    steps: List[Step]
+    steps: List[Optional[Step]]
     """
     An ordered list of all steps in the procedure.
     """
 
-    def __init__(self, name: str, steps: List[Step] = None):
+    def __init__(self, name: str, steps: List[Optional[Step]] = None):
         self.name = name 
         self.steps = steps or []
 
@@ -56,6 +56,9 @@ class Procedure(object):
         debug_print(f"[ START ] procedure {self.name}")
 
         for i, step in enumerate(self.steps):
+            if step is None:
+                return
+
             step_start = datetime.now()
             debug_print(f"[ START ] step #{i + 1}: {step.name}")
 

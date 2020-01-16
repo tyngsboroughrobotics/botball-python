@@ -40,9 +40,16 @@ class Step(object):
             # noinspection PyArgumentList
             self.action()
 
+    def repeat(self, times: int):
+        def action(debug: bool):
+            for _ in range(times):
+                self.action(debug)
+
+        self.action = action
+        return self
+
     def __call__(self, *args, **kwargs):
         self.run(*args, **kwargs)
-
 
 def step(name: str, description: Optional[str] = None):
     return lambda fn: Step(name=name, description=description, action=fn)
