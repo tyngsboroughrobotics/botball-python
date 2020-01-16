@@ -69,7 +69,7 @@ class Servo(Movable):
 
     # - Configuration 
 
-    min_position: float = 300 
+    min_position: float = 98
     """
     The minimum position allowed to safely move a servo.
 
