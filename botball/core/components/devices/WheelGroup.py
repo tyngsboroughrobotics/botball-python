@@ -19,25 +19,9 @@ class WheelGroup(object):
     The right motor.
     """
 
-    left_offset: float
-    """
-    If the left motor travels slower than the right motor even at the same
-    speeds, increase the offset to make the motors move in unison. A value
-    of 1 indicates no change.
-    """
-
-    right_offset: float
-    """
-    If the right motor travels slower than the left motor even at the same
-    speeds, increase the offset to make the motors move in unison. A value
-    of 1 indicates no change.
-    """
-
-    def __init__(self, left: Motor, right: Motor, left_offset: float = 1, right_offset: float = 1):
+    def __init__(self, left: Motor, right: Motor):
         self.left_motor = left
         self.right_motor = right
-        self.left_offset = left_offset
-        self.right_offset = right_offset
 
     # - Driving
 
@@ -45,31 +29,18 @@ class WheelGroup(object):
         self,
         left_direction: Direction = Direction.Forward, left_distance: float = 100,
         right_direction: Direction = Direction.Forward, right_distance: float = 100,
-        block: bool = True, sleep: bool = True, offset: bool = True
+        block: bool = True, sleep: bool = True
     ):
         """
         Drive with different parameters for both wheels.
-
-        - `offset`: Whether the offset for the left and/or right motor should
-        be incorporated into the distance each motor travels so they move in
-        unison.
 
         See `Motor.move()` for information on the other parameters.
         """
         left_motor = self.left_motor.__copy__()
         right_motor = self.right_motor.__copy__()
-        left_distance_offset = left_distance
-        right_distance_offset = right_distance
 
-        if offset:
-            left_motor.speed *= self.left_offset
-            right_motor.speed = self.right_offset
-
-            left_distance_offset *= self.left_offset
-            right_distance_offset *= self.right_offset
-
-        left_motor.move(left_direction, mm=left_distance_offset, block=False, sleep=False)
-        right_motor.move(right_direction, mm=right_distance_offset, block=block, sleep=False)
+        left_motor.move(left_direction, mm=left_distance, block=False, sleep=False)
+        right_motor.move(right_direction, mm=right_distance, block=block, sleep=False)
 
         if block:
             wallaby.off(left_motor.port)
@@ -81,14 +52,10 @@ class WheelGroup(object):
         self,
         direction: Direction = Direction.Forward,
         mm: float = 100,
-        block: bool = True, sleep: bool = True, offset: bool = True
+        block: bool = True, sleep: bool = True
     ):
         """
         Drive with the same parameters for both wheels.
-
-        - `offset`: Whether the offset for the left and/or right motor should
-        be incorporated into the distance each motor travels so they move in
-        unison.
 
         See `Motor.move()` for information on the other parameters.
         """
@@ -99,8 +66,7 @@ class WheelGroup(object):
             left_distance=mm,
             right_distance=mm,
             block=block,
-            sleep=sleep,
-            offset=offset
+            sleep=sleep
         )
 
     # - Turning
@@ -124,8 +90,7 @@ class WheelGroup(object):
             left_distance=distance,
             right_distance=distance,
             block=block,
-            sleep=sleep,
-            offset=False
+            sleep=sleep
         )
 
     def turn_left(self, degrees: float, block: bool = True, sleep: bool = True):
@@ -147,8 +112,7 @@ class WheelGroup(object):
             left_distance=distance,
             right_distance=distance,
             block=block,
-            sleep=sleep,
-            offset=False
+            sleep=sleep
         )
 
     # - Configuration
