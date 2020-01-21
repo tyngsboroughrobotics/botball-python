@@ -38,8 +38,10 @@ class Servo(Component):
         # Move the servo to the bounded position
         wallaby.set_servo_position(self.port, bounded_position)
         
-        # just wait a little bit longer for the servo to finish
-        wallaby.msleep(100)
+        # Wait for the servo to finish
+        wallaby.msleep(int(100 + abs(self._position - bounded_position) * self.ms_per_tick))
+
+        self._position = bounded_position
 
         self.disable()
 
@@ -65,6 +67,15 @@ class Servo(Component):
     max_position: float = 1947
     """
     The maximum position allowed to safely move a servo.
+
+    If this value is inaccurate for your robot, you can change it. Do so as
+    early in your program as possible (eg. before you create/initialize any
+    components.)
+    """
+
+    ms_per_tick: float = 1.6
+    """
+    The number of milliseconds it takes for the servo to move one tick.
 
     If this value is inaccurate for your robot, you can change it. Do so as
     early in your program as possible (eg. before you create/initialize any
