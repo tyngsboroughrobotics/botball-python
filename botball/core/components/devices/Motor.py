@@ -1,15 +1,16 @@
 from botball import wallaby
+from ..Movable import Movable
 from ..Direction import Direction
-from ..Component import Component
+from ...helpers.scale import scale 
 
 
-class Motor(Component):
+class Motor(Movable): 
     """
     Represents a motor connected to the robot.
     """ 
 
     def __copy__(self):
-        return Motor(self.port)
+        return Motor(self.port, self.speed)
 
     def move(self, direction: Direction, mm: float, block: bool = True, sleep: bool = True):
         """ 
@@ -30,7 +31,7 @@ class Motor(Component):
         future movements unreliable (not fun to debug!). If this is set to
         `False`, then the value of `mm` is ignored.
         """
-        velocity = int(self.motor_ticks_per_second * direction.multiplier())
+        velocity = int(self._velocity() * direction.multiplier())
 
         wallaby.move_at_velocity(self.port, velocity)
 
@@ -80,7 +81,10 @@ class Motor(Component):
     # - Calculation
 
     def _mm_to_ticks(self, mm: float) -> float:
-        return self.motor_ticks_per_mm * mm
+        return self.motor_ticks_per_mm * mm 
+    
+    def _velocity(self) -> float:
+        return scale(self.speed, 0, 1, 0, self.motor_ticks_per_second)
     
     def _ticks_to_ms(self, ticks: float) -> float:
-        return abs(ticks * self.motor_ticks_per_second)
+        return abs(ticks * self.motor_ticks_per_second / self._velocity())

@@ -1,12 +1,15 @@
 from botball import wallaby
-from ..Component import Component
+from ..Movable import Movable
+from ..Direction import Direction
 from ...helpers.scale import scale 
 
 
-class Servo(Component):
+class Servo(Movable):
     """ 
     Represents a servo connected to the robot.
-    """
+    """ 
+
+    _position: int = 0 
 
     def enable(self): 
         """ 
@@ -30,12 +33,27 @@ class Servo(Component):
 
         self.enable()
 
+        initial_position = self._position 
+
         # Limit the servo range to within safe boundaries
-        bounded_position = int(scale(position, 0, 1, self.min_position, self.max_position))
+        bounded_position = scale(position, 0, 1, self.min_position, self.max_position)
 
-        # Move the servo
-        wallaby.set_servo_position(self.port, bounded_position)
+        # Calculate how far the servo actually needs to travel
+        difference = bounded_position - initial_position
+        direction = Direction.Forward if difference >= 0 else Direction.Backward
+        total_distance = abs(difference)
+        time_interval = self._time_interval()
 
+        x = 0 
+        while x < total_distance:
+            self._position = x 
+
+            raw_position = initial_position + (x * direction.multiplier())
+            wallaby.set_servo_position(self.port, raw_position)
+
+            wallaby.msleep(time_interval)
+            x += 1
+        
         # just wait a little bit longer for the servo to finish
         wallaby.msleep(100)
 
@@ -47,14 +65,7 @@ class Servo(Component):
         (rightmost).
         """
 
-        return scale(self.raw_position(), self.min_position, self.max_position, 0, 1)
-
-    def raw_position(self) -> int:
-        """
-        The current, unbounded position of this servo expressed in raw units.
-        """
-
-        return wallaby.get_servo_position(self.port)
+        return scale(self._position, self.min_position, self.max_position, 0, 1)
 
     # - Configuration 
 
@@ -75,3 +86,12 @@ class Servo(Component):
     early in your program as possible (eg. before you create/initialize any
     components.)
     """
+
+    # - Calculation
+
+    def _time_interval(self) -> int:
+        """
+        Returns the amount of time (in ms) that should be spent between each 
+        increment of the servo position, based on the servo's speed.
+        """
+        return int((1.0 - self.speed) * 5)
