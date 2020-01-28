@@ -31,13 +31,12 @@ class Motor(Movable):
         future movements unreliable (not fun to debug!). If this is set to
         `False`, then the value of `mm` is ignored.
         """
-        velocity = int(self._velocity() * direction.multiplier())
 
-        wallaby.move_at_velocity(self.port, velocity)
+        ticks = int(self.speed * self.max_ticks)
+        wallaby.move_at_velocity(self.port, ticks * direction.multiplier())
 
         if block:
-            distance_ticks = self._mm_to_ticks(mm)
-            ms_to_sleep = int(self._ticks_to_ms(distance_ticks))
+            ms_to_sleep = int(self._secs_to_sleep_for_distance(mm, ticks) * 1000)
 
             wallaby.msleep(ms_to_sleep)
             wallaby.off(self.port)
@@ -46,26 +45,6 @@ class Motor(Movable):
             wallaby.msleep(self.default_sleep_time)
 
     # - Constants
-
-    motor_ticks_per_mm: float = 10 / 1.13
-    """
-    The number of motor "ticks" (`wallaby`'s internal motor unit) in one
-    millimeter.
-
-    If this value is inaccurate for your robot, you can change it. Do so as
-    early in your program as possible (eg. before you create/initialize any
-    components.)
-    """
-
-    motor_ticks_per_second: float = 818
-    """
-    The number of motor "ticks" (`wallaby`'s internal motor unit) a
-    motor will travel at full speed in one second.
-
-    If this value is inaccurate for your robot, you can change it. Do so as
-    early in your program as possible (eg. before you create/initialize any
-    components.)
-    """
 
     default_sleep_time: int = 300 
     """
@@ -80,11 +59,8 @@ class Motor(Movable):
 
     # - Calculation
 
-    def _mm_to_ticks(self, mm: float) -> float:
-        return self.motor_ticks_per_mm * mm 
-    
-    def _velocity(self) -> float:
-        return scale(self.speed, 0, 1, 0, self.motor_ticks_per_second)
-    
-    def _ticks_to_ms(self, ticks: float) -> float:
-        return abs(ticks * self.motor_ticks_per_second / self._velocity())
+    max_ticks = 1500
+    secs_it_takes_to_travel_100_mm_at_max_ticks = 0.5275
+
+    def _secs_to_sleep_for_distance(self, distance_in_mm, ticks):
+        return(self.max_ticks * self.secs_it_takes_to_travel_100_mm_at_max_ticks * distance_in_mm) / (100 * ticks)
