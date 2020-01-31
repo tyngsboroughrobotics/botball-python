@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-<meta name="generator" content="pdoc 0.6.3" />
+<meta name="generator" content="pdoc 0.7.4" />
 <title>botball.wallaby.bindings API documentation</title>
 <meta name="description" content="" />
 <link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'>
 <link href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css' rel='stylesheet'>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
-<style>.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{font-weight:bold}#index h4 + ul{margin-bottom:.6em}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase;cursor:pointer}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style>.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{font-weight:bold}#index h4 + ul{margin-bottom:.6em}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
 <style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
 <style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
 </head>
@@ -21,7 +21,9 @@
 </header>
 <section id="section-intro">
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">try:
     from typing import Any
 except ImportError:
@@ -4023,7 +4025,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def a_button() -&gt; int:
     &#34;&#34;&#34;
 
@@ -4062,7 +4066,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def a_button_clicked() -&gt; int:
     &#34;&#34;&#34;
 
@@ -4099,7 +4105,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def accel_calibrate() -&gt; int:
     &#34;&#34;&#34;
 
@@ -4147,7 +4155,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def accel_x() -&gt; int:
     &#34;&#34;&#34;
 
@@ -4195,7 +4205,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def accel_y() -&gt; int:
     &#34;&#34;&#34;
 
@@ -4236,7 +4248,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def accel_z() -&gt; int:
     &#34;&#34;&#34;
 
@@ -4270,7 +4284,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def alloff():
     &#34;&#34;&#34;
 
@@ -4315,7 +4331,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def analog(port: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -4360,7 +4378,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def analog10(port: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -4398,7 +4418,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def analog12(port: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -4436,7 +4458,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def analog8(port: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -4477,7 +4501,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def analog_et(port: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -4514,7 +4540,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def any_button() -&gt; int:
     &#34;&#34;&#34;
 
@@ -4546,7 +4574,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def ao():
     &#34;&#34;&#34;
 
@@ -4580,7 +4610,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def b_button() -&gt; int:
     &#34;&#34;&#34;
 
@@ -4619,7 +4651,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def b_button_clicked() -&gt; int:
     &#34;&#34;&#34;
 
@@ -4671,7 +4705,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def battery_charging() -&gt; int:
     &#34;&#34;&#34;
 
@@ -4705,7 +4741,9 @@ def wait_for_side_button_clicked():
 <li>Note: does not seem to work on the Wallaby</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def beep():
     &#34;&#34;&#34;
 
@@ -4733,7 +4771,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def bk(motor: int):
     &#34;&#34;&#34;
 
@@ -4767,7 +4807,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def black_button() -&gt; int:
     &#34;&#34;&#34;
 
@@ -4804,7 +4846,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def block_motor_done(motor: int):
     &#34;&#34;&#34;
 
@@ -4839,7 +4883,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def bmd(motor: int):
     &#34;&#34;&#34;
 
@@ -4875,7 +4921,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def c_button() -&gt; int:
     &#34;&#34;&#34;
 
@@ -4914,7 +4962,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def c_button_clicked() -&gt; int:
     &#34;&#34;&#34;
 
@@ -4962,7 +5012,9 @@ def wait_for_side_button_clicked():
 <li>In group: com&hellip;</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def calibrate_compass():
     &#34;&#34;&#34;
 
@@ -5011,7 +5063,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def camera_close():
     &#34;&#34;&#34;
 
@@ -5052,7 +5106,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def camera_load_config(name: str) -&gt; int:
     &#34;&#34;&#34;
 
@@ -5095,7 +5151,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def camera_open() -&gt; int:
     &#34;&#34;&#34;
 
@@ -5153,7 +5211,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def camera_open_at_res(res: Any) -&gt; int:
     &#34;&#34;&#34;
 
@@ -5207,7 +5267,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def camera_open_black() -&gt; int:
     &#34;&#34;&#34;
 
@@ -5267,7 +5329,9 @@ def wait_for_side_button_clicked():
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def camera_open_device(number: int, res: Any) -&gt; int:
     &#34;&#34;&#34;
 
@@ -5346,7 +5410,9 @@ The black 2017 Botball camera</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def camera_open_device_model_at_res(number: int, model: Any, res: Any) -&gt; int:
     &#34;&#34;&#34;
 
@@ -5396,7 +5462,9 @@ The black 2017 Botball camera</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def camera_update() -&gt; int:
     &#34;&#34;&#34;
 
@@ -5432,7 +5500,9 @@ The black 2017 Botball camera</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def can_see_marker(marker: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -5469,7 +5539,9 @@ The black 2017 Botball camera</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def clear_motor_position_counter(motor: int):
     &#34;&#34;&#34;
 
@@ -5504,7 +5576,9 @@ The black 2017 Botball camera</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def cmpc(motor: int):
     &#34;&#34;&#34;
 
@@ -5583,7 +5657,9 @@ See the
 <li>In group: console</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def console_clear():
     &#34;&#34;&#34;************************************************************************
 
@@ -5649,7 +5725,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_advance_led(on: int):
     &#34;&#34;&#34;
 
@@ -5667,7 +5745,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_clear_serial_buffer():
     &#34;&#34;&#34;
 
@@ -5709,7 +5789,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_connect() -&gt; int:
     &#34;&#34;&#34;
 
@@ -5753,7 +5835,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_connect_once() -&gt; int:
     &#34;&#34;&#34;
 
@@ -5777,7 +5861,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_cover():
     &#34;&#34;&#34;
 
@@ -5795,7 +5881,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_cover_dock():
     &#34;&#34;&#34;
 
@@ -5813,7 +5901,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_demo(d: int):
     &#34;&#34;&#34;
 
@@ -5831,7 +5921,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_digital_output(bits: int):
     &#34;&#34;&#34;
 
@@ -5855,7 +5947,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_disconnect():
     &#34;&#34;&#34;
 
@@ -5877,7 +5971,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_drive(speed: int, radius: int):
     &#34;&#34;&#34;
 
@@ -5895,7 +5991,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_drive_direct(l_speed: int, r_speed: int):
     &#34;&#34;&#34;
 
@@ -5913,7 +6011,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_drive_straight(speed: int):
     &#34;&#34;&#34;
 
@@ -5931,7 +6031,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_full():
     &#34;&#34;&#34;
 
@@ -5949,7 +6051,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_load_song(num: int):
     &#34;&#34;&#34;
 
@@ -5967,7 +6071,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_low_side_drivers(pwm2: int, pwm1: int, pwm0: int):
     &#34;&#34;&#34;
 
@@ -5985,7 +6091,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_passive():
     &#34;&#34;&#34;
 
@@ -6003,7 +6111,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_play_led(on: int):
     &#34;&#34;&#34;
 
@@ -6021,7 +6131,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_play_song(num: int):
     &#34;&#34;&#34;
 
@@ -6037,7 +6149,9 @@ See the
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_point2(x: int, y: int) -&gt; Any:
     &#34;&#34;&#34;
     (undocumented)
@@ -6051,7 +6165,9 @@ See the
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_point3(x: int, y: int, z: int) -&gt; Any:
     &#34;&#34;&#34;
     (undocumented)
@@ -6067,7 +6183,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_power_led(color: int, brightness: int):
     &#34;&#34;&#34;
 
@@ -6085,7 +6203,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_pwm_low_side_drivers(pwm2: int, pwm1: int, pwm0: int):
     &#34;&#34;&#34;
 
@@ -6103,7 +6223,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_read_block(data: str, count: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -6119,7 +6241,9 @@ See the
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_rectangle(ulx: int, uly: int, width: int, height: int) -&gt; Any:
     &#34;&#34;&#34;
     (undocumented)
@@ -6135,7 +6259,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_safe():
     &#34;&#34;&#34;
 
@@ -6153,7 +6279,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_spin_CCW(speed: int):
     &#34;&#34;&#34;
 
@@ -6171,7 +6299,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_spin_CW(speed: int):
     &#34;&#34;&#34;
 
@@ -6189,7 +6319,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_spin_block(speed: int, angle: int):
     &#34;&#34;&#34;
 
@@ -6207,7 +6339,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_spot():
     &#34;&#34;&#34;
 
@@ -6225,7 +6359,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_start():
     &#34;&#34;&#34;
 
@@ -6243,7 +6379,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_stop():
     &#34;&#34;&#34;
 
@@ -6261,7 +6399,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def create_write_byte(byte: str):
     &#34;&#34;&#34;
 
@@ -6277,7 +6417,9 @@ See the
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def debug_dump_data(data: str, size: Any, where: str) -&gt; int:
     &#34;&#34;&#34;
     (undocumented)
@@ -6291,7 +6433,9 @@ See the
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def debug_print_registers():
     &#34;&#34;&#34;
     (undocumented)
@@ -6321,7 +6465,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def digital(port: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -6356,7 +6502,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def disable_servo(port: int):
     &#34;&#34;&#34;
 
@@ -6383,7 +6531,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def disable_servos():
     &#34;&#34;&#34;
 
@@ -6437,7 +6587,9 @@ See the
 *</p>
 <hr></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def display_clear():
     &#34;&#34;&#34;************************************************************************
 
@@ -6485,7 +6637,9 @@ See the
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def display_printf(col: int, row: int, t: str):
     &#34;&#34;&#34;
     (undocumented)
@@ -6518,7 +6672,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def enable_servo(port: int):
     &#34;&#34;&#34;
 
@@ -6552,7 +6708,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def enable_servos():
     &#34;&#34;&#34;
 
@@ -6581,7 +6739,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def extra_buttons_hide():
     &#34;&#34;&#34;
 
@@ -6614,7 +6774,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def extra_buttons_show():
     &#34;&#34;&#34;
 
@@ -6646,7 +6808,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def fd(motor: int):
     &#34;&#34;&#34;
 
@@ -6676,7 +6840,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def freeze(motor: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -6696,7 +6862,9 @@ See the
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def freeze_halt():
     &#34;&#34;&#34;
     (undocumented)
@@ -6710,7 +6878,9 @@ See the
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def g_printCharacter(n: int, x: int, y: int, r: int, g: int, b: int, size: float):
     &#34;&#34;&#34;
     (undocumented)
@@ -6724,7 +6894,9 @@ See the
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def g_printFloat(n: float, numDigits: int, x: int, y: int, r: int, g: int, b: int, size: float):
     &#34;&#34;&#34;
     (undocumented)
@@ -6738,7 +6910,9 @@ See the
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def g_printInt(n: int, minNumDigits: int, x: int, y: int, r: int, g: int, b: int, size: float) -&gt; int:
     &#34;&#34;&#34;
     (undocumented)
@@ -6752,7 +6926,9 @@ See the
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def g_printString(s: str, x: int, y: int, r: int, g: int, b: int, size: float):
     &#34;&#34;&#34;
     (undocumented)
@@ -6766,7 +6942,9 @@ See the
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def g_segmentDisplay(s: int, x: int, y: int, r: int, g: int, b: int, size: float):
     &#34;&#34;&#34;
     (undocumented)
@@ -6797,7 +6975,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_analog_pullup(port: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -6823,7 +7003,9 @@ See the
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_camera_element_size() -&gt; int:
     &#34;&#34;&#34;
     (undocumented)
@@ -6847,7 +7029,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_camera_frame() -&gt; str:
     &#34;&#34;&#34;
 
@@ -6880,7 +7064,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_camera_frame_row(row: int) -&gt; str:
     &#34;&#34;&#34;
 
@@ -6912,7 +7098,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_camera_height() -&gt; int:
     &#34;&#34;&#34;
 
@@ -6948,7 +7136,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_camera_pixel(p: Any) -&gt; Any:
     &#34;&#34;&#34;
 
@@ -6981,7 +7171,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_camera_width() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7013,7 +7205,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_channel_count() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7040,7 +7234,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_code_num(channel: int, object: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -7068,7 +7264,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_compass_angle() -&gt; float:
     &#34;&#34;&#34;
 
@@ -7093,7 +7291,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_advance_button() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7111,7 +7311,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_battery_capacity() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7129,7 +7331,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_battery_charge() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7147,7 +7351,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_battery_charging_state() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7165,7 +7371,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_battery_current() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7183,7 +7391,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_battery_temp() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7201,7 +7411,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_battery_voltage() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7219,7 +7431,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_baud_rate() -&gt; Any:
     &#34;&#34;&#34;
 
@@ -7237,7 +7451,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_bay_AI() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7255,7 +7471,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_bay_DI() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7273,7 +7491,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_cwdrop() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7291,7 +7511,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_distance() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7309,7 +7531,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_infrared() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7327,7 +7551,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_lbump() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7345,7 +7571,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_lcliff() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7363,7 +7591,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_lcliff_amt() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7381,7 +7611,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_lclightbump() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7399,7 +7631,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_lclightbump_amt() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7417,7 +7651,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_lfcliff() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7435,7 +7671,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_lfcliff_amt() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7453,7 +7691,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_lflightbump() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7471,7 +7711,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_lflightbump_amt() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7489,7 +7731,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_llightbump() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7507,7 +7751,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_llightbump_amt() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7525,7 +7771,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_lwdrop() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7543,7 +7791,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_mode() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7561,7 +7811,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_normalized_angle() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7579,7 +7831,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_number_of_stream_packets() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7597,7 +7851,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_overcurrents() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7615,7 +7871,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_play_button() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7633,7 +7891,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_rbump() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7651,7 +7911,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_rcliff() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7669,7 +7931,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_rcliff_amt() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7687,7 +7951,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_rclightbump() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7705,7 +7971,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_rclightbump_amt() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7723,7 +7991,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_requested_left_velocity() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7741,7 +8011,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_requested_radius() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7759,7 +8031,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_requested_right_velocity() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7777,7 +8051,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_requested_velocity() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7795,7 +8071,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_rfcliff() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7813,7 +8091,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_rfcliff_amt() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7831,7 +8111,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_rflightbump() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7849,7 +8131,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_rflightbump_amt() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7867,7 +8151,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_rlightbump() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7885,7 +8171,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_rlightbump_amt() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7903,7 +8191,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_rwdrop() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7921,7 +8211,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_song_number() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7939,7 +8231,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_song_playing() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7957,7 +8251,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_total_angle() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7975,7 +8271,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_vwall() -&gt; int:
     &#34;&#34;&#34;
 
@@ -7993,7 +8291,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_wall() -&gt; int:
     &#34;&#34;&#34;
 
@@ -8011,7 +8311,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_create_wall_amt() -&gt; int:
     &#34;&#34;&#34;
 
@@ -8038,7 +8340,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_digital_output(port: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -8071,7 +8375,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_digital_pullup(port: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -8104,7 +8410,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_digital_value(port: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -8137,7 +8445,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_extra_buttons_visible() -&gt; int:
     &#34;&#34;&#34;
 
@@ -8173,7 +8483,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_key_state(key: Any) -&gt; int:
     &#34;&#34;&#34;
 
@@ -8199,7 +8511,9 @@ See the
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_low_volt_threshold() -&gt; float:
     &#34;&#34;&#34;
     (undocumented)
@@ -8229,7 +8543,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_marker_pose(markerId: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -8282,7 +8598,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_markers_in_view() -&gt; int:
     &#34;&#34;&#34;
 
@@ -8329,7 +8647,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_motor_done(motor: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -8373,7 +8693,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_motor_position_counter(motor: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -8410,7 +8732,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_mouse_left_button() -&gt; int:
     &#34;&#34;&#34;
 
@@ -8438,7 +8762,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_mouse_middle_button() -&gt; int:
     &#34;&#34;&#34;
 
@@ -8461,7 +8787,9 @@ Gets an array of all Aruco markers in view</p>
 <li>In group: graphics</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_mouse_position(x: int, y: int):
     &#34;&#34;&#34;
 
@@ -8487,7 +8815,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_mouse_right_button() -&gt; int:
     &#34;&#34;&#34;
 
@@ -8514,7 +8844,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_object_area(channel: int, object: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -8539,7 +8871,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_object_bbox(channel: int, object: int) -&gt; Any:
     &#34;&#34;&#34;
 
@@ -8557,7 +8891,9 @@ Gets an array of all Aruco markers in view</p>
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_object_bbox_brx(channel: int, object: int) -&gt; int:
     &#34;&#34;&#34;
     (undocumented)
@@ -8571,7 +8907,9 @@ Gets an array of all Aruco markers in view</p>
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_object_bbox_bry(channel: int, object: int) -&gt; int:
     &#34;&#34;&#34;
     (undocumented)
@@ -8585,7 +8923,9 @@ Gets an array of all Aruco markers in view</p>
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_object_bbox_height(channel: int, object: int) -&gt; int:
     &#34;&#34;&#34;
     (undocumented)
@@ -8599,7 +8939,9 @@ Gets an array of all Aruco markers in view</p>
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_object_bbox_ulx(channel: int, object: int) -&gt; int:
     &#34;&#34;&#34;
     (undocumented)
@@ -8613,7 +8955,9 @@ Gets an array of all Aruco markers in view</p>
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_object_bbox_uly(channel: int, object: int) -&gt; int:
     &#34;&#34;&#34;
     (undocumented)
@@ -8627,7 +8971,9 @@ Gets an array of all Aruco markers in view</p>
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_object_bbox_width(channel: int, object: int) -&gt; int:
     &#34;&#34;&#34;
     (undocumented)
@@ -8648,7 +8994,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_object_center(channel: int, object: int) -&gt; Any:
     &#34;&#34;&#34;
 
@@ -8666,7 +9014,9 @@ Gets an array of all Aruco markers in view</p>
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_object_center_column(channel: int, object: int) -&gt; int:
     &#34;&#34;&#34;
     (undocumented)
@@ -8680,7 +9030,9 @@ Gets an array of all Aruco markers in view</p>
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_object_center_row(channel: int, object: int) -&gt; int:
     &#34;&#34;&#34;
     (undocumented)
@@ -8694,7 +9046,9 @@ Gets an array of all Aruco markers in view</p>
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_object_center_x(channel: int, object: int) -&gt; int:
     &#34;&#34;&#34;
     (undocumented)
@@ -8708,7 +9062,9 @@ Gets an array of all Aruco markers in view</p>
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_object_center_y(channel: int, object: int) -&gt; int:
     &#34;&#34;&#34;
     (undocumented)
@@ -8729,7 +9085,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_object_centroid(channel: int, object: int) -&gt; Any:
     &#34;&#34;&#34;
 
@@ -8747,7 +9105,9 @@ Gets an array of all Aruco markers in view</p>
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_object_centroid_column(channel: int, object: int) -&gt; int:
     &#34;&#34;&#34;
     (undocumented)
@@ -8761,7 +9121,9 @@ Gets an array of all Aruco markers in view</p>
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_object_centroid_row(channel: int, object: int) -&gt; int:
     &#34;&#34;&#34;
     (undocumented)
@@ -8775,7 +9137,9 @@ Gets an array of all Aruco markers in view</p>
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_object_centroid_x(channel: int, object: int) -&gt; int:
     &#34;&#34;&#34;
     (undocumented)
@@ -8789,7 +9153,9 @@ Gets an array of all Aruco markers in view</p>
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_object_centroid_y(channel: int, object: int) -&gt; int:
     &#34;&#34;&#34;
     (undocumented)
@@ -8809,7 +9175,9 @@ Gets an array of all Aruco markers in view</p>
 <li>In group: camera</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_object_confidence(channel: int, object: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -8845,7 +9213,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_object_count(channel: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -8886,7 +9256,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_object_data(channel: int, object: int) -&gt; str:
     &#34;&#34;&#34;
 
@@ -8923,7 +9295,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_object_data_length(channel: int, object: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -8973,7 +9347,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_pid_gains(motor: int, p: int, i: int, d: int, pd: int, id: int, dd: int):
     &#34;&#34;&#34;
 
@@ -9005,7 +9381,9 @@ Gets an array of all Aruco markers in view</p>
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_robot_firmware_version() -&gt; int:
     &#34;&#34;&#34;
     (undocumented)
@@ -9019,7 +9397,9 @@ Gets an array of all Aruco markers in view</p>
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_robot_states_sequence_num() -&gt; int:
     &#34;&#34;&#34;
     (undocumented)
@@ -9033,7 +9413,9 @@ Gets an array of all Aruco markers in view</p>
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_robot_update_count() -&gt; int:
     &#34;&#34;&#34;
     (undocumented)
@@ -9047,7 +9429,9 @@ Gets an array of all Aruco markers in view</p>
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_robot_update_delay() -&gt; int:
     &#34;&#34;&#34;
     (undocumented)
@@ -9074,7 +9458,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_servo_enabled(port: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -9112,7 +9498,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def get_servo_position(port: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -9146,7 +9534,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def getpwm(motor: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -9179,7 +9569,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def gmpc(motor: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -9204,7 +9596,9 @@ Gets an array of all Aruco markers in view</p>
 <li>See: graphics_blit_enc</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def graphics_blit(data: str, x: int, y: int, width: int, height: int):
     &#34;&#34;&#34;
 
@@ -9245,7 +9639,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def graphics_blit_enc(data: str, enc: Any, x: int, y: int, width: int, height: int):
     &#34;&#34;&#34;
 
@@ -9280,7 +9676,9 @@ Gets an array of all Aruco markers in view</p>
 <li>See: graphics_blit_region_enc</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def graphics_blit_region(data: str, sx: int, sy: int, ex: int, ey: int, width: int, height: int, dx: int, dy: int):
     &#34;&#34;&#34;
 
@@ -9333,7 +9731,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def graphics_blit_region_enc(data: str, enc: Any, sx: int, sy: int, ex: int, ey: int, width: int, height: int, dx: int, dy: int):
     &#34;&#34;&#34;
 
@@ -9387,7 +9787,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def graphics_circle(cx: int, cy: int, radius: int, r: int, g: int, b: int):
     &#34;&#34;&#34;
 
@@ -9425,7 +9827,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def graphics_circle_fill(cx: int, cy: int, radius: int, r: int, g: int, b: int):
     &#34;&#34;&#34;
 
@@ -9452,7 +9856,9 @@ Gets an array of all Aruco markers in view</p>
 <li>In group: graphics</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def graphics_clear():
     &#34;&#34;&#34;
 
@@ -9473,7 +9879,9 @@ Gets an array of all Aruco markers in view</p>
 <li>In group: graphics</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def graphics_close():
     &#34;&#34;&#34;
 
@@ -9505,7 +9913,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def graphics_fill(r: int, g: int, b: int):
     &#34;&#34;&#34;
 
@@ -9543,7 +9953,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def graphics_line(x1: int, y1: int, x2: int, y2: int, r: int, g: int, b: int):
     &#34;&#34;&#34;
 
@@ -9595,7 +10007,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def graphics_open(width: int, height: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -9644,7 +10058,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def graphics_pixel(x: int, y: int, r: int, g: int, b: int):
     &#34;&#34;&#34;
 
@@ -9695,7 +10111,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def graphics_printCharacter(n: int, x: int, y: int, r: int, g: int, b: int, size: float):
     &#34;&#34;&#34;
 
@@ -9758,7 +10176,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def graphics_printFloat(n: float, numDigits: int, x: int, y: int, r: int, g: int, b: int, size: float):
     &#34;&#34;&#34;
 
@@ -9823,7 +10243,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def graphics_printInt(n: int, minNumDigits: int, x: int, y: int, r: int, g: int, b: int, size: float) -&gt; int:
     &#34;&#34;&#34;
 
@@ -9885,7 +10307,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def graphics_printString(s: str, x: int, y: int, r: int, g: int, b: int, size: float):
     &#34;&#34;&#34;
 
@@ -9944,7 +10368,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def graphics_rectangle(x1: int, y1: int, x2: int, y2: int, r: int, g: int, b: int):
     &#34;&#34;&#34;
 
@@ -10002,7 +10428,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def graphics_rectangle_fill(x1: int, y1: int, x2: int, y2: int, r: int, g: int, b: int):
     &#34;&#34;&#34;
 
@@ -10061,7 +10489,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def graphics_segmentDisplay(s: int, x: int, y: int, r: int, g: int, b: int, size: float):
     &#34;&#34;&#34;
 
@@ -10108,7 +10538,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def graphics_triangle(x1: int, y1: int, x2: int, y2: int, x3: int, y3: int, r: int, g: int, b: int):
     &#34;&#34;&#34;
 
@@ -10146,7 +10578,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def graphics_triangle_fill(x1: int, y1: int, x2: int, y2: int, x3: int, y3: int, r: int, g: int, b: int):
     &#34;&#34;&#34;
 
@@ -10174,7 +10608,9 @@ Gets an array of all Aruco markers in view</p>
 <li>In group: graphics</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def graphics_update():
     &#34;&#34;&#34;
 
@@ -10205,7 +10641,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def gyro_calibrate() -&gt; int:
     &#34;&#34;&#34;
 
@@ -10246,7 +10684,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def gyro_x() -&gt; int:
     &#34;&#34;&#34;
 
@@ -10281,7 +10721,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def gyro_y() -&gt; int:
     &#34;&#34;&#34;
 
@@ -10309,7 +10751,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def gyro_z() -&gt; int:
     &#34;&#34;&#34;
 
@@ -10329,7 +10773,9 @@ Gets an array of all Aruco markers in view</p>
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def halt():
     &#34;&#34;&#34;
     (undocumented)
@@ -10345,7 +10791,9 @@ Gets an array of all Aruco markers in view</p>
 <li>Deprecated: non present on the Wallaby</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def ir_read():
     &#34;&#34;&#34;
 
@@ -10364,7 +10812,9 @@ Gets an array of all Aruco markers in view</p>
 <li>Deprecated: non present on the Wallaby</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def ir_write():
     &#34;&#34;&#34;
 
@@ -10393,7 +10843,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def left_button() -&gt; int:
     &#34;&#34;&#34;
 
@@ -10426,7 +10878,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def magneto_calibrate() -&gt; int:
     &#34;&#34;&#34;
 
@@ -10467,7 +10921,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def magneto_x() -&gt; int:
     &#34;&#34;&#34;
 
@@ -10502,7 +10958,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def magneto_y() -&gt; int:
     &#34;&#34;&#34;
 
@@ -10530,7 +10988,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def magneto_z() -&gt; int:
     &#34;&#34;&#34;
 
@@ -10566,7 +11026,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def mav(motor: int, velocity: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -10605,7 +11067,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def motor(motor: int, percent: int):
     &#34;&#34;&#34;
 
@@ -10644,7 +11108,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def motor_power(motor: int, percent: int):
     &#34;&#34;&#34;
 
@@ -10687,7 +11153,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def move_at_velocity(motor: int, velocity: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -10732,7 +11200,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def move_relative_position(motor: int, speed: int, delta_pos: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -10783,7 +11253,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def move_to_position(motor: int, speed: int, goal_pos: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -10832,7 +11304,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def mrp(motor: int, speed: int, delta_pos: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -10858,7 +11332,9 @@ Gets an array of all Aruco markers in view</p>
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def msleep(msecs: int):
     &#34;&#34;&#34;
     (undocumented)
@@ -10891,7 +11367,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def mtp(motor: int, speed: int, goal_pos: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -10919,7 +11397,9 @@ Gets an array of all Aruco markers in view</p>
 <li>In group: thread</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def mutex_create() -&gt; Any:
     &#34;&#34;&#34;
 
@@ -10937,7 +11417,9 @@ Gets an array of all Aruco markers in view</p>
 <li>In group: thread</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def mutex_destroy(m: Any):
     &#34;&#34;&#34;
 
@@ -10955,7 +11437,9 @@ Gets an array of all Aruco markers in view</p>
 <li>In group: thread</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def mutex_lock(m: Any):
     &#34;&#34;&#34;
 
@@ -10973,7 +11457,9 @@ Gets an array of all Aruco markers in view</p>
 <li>In group: thread</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def mutex_trylock(m: Any) -&gt; int:
     &#34;&#34;&#34;
 
@@ -10991,7 +11477,9 @@ Gets an array of all Aruco markers in view</p>
 <li>In group: thread</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def mutex_unlock(m: Any):
     &#34;&#34;&#34;
 
@@ -11017,7 +11505,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def off(motor: int):
     &#34;&#34;&#34;
 
@@ -11049,7 +11539,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def power_level() -&gt; float:
     &#34;&#34;&#34;
 
@@ -11083,7 +11575,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def power_level_life() -&gt; float:
     &#34;&#34;&#34;
 
@@ -11114,7 +11608,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def power_level_lipo() -&gt; float:
     &#34;&#34;&#34;
 
@@ -11143,7 +11639,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def power_level_nimh() -&gt; float:
     &#34;&#34;&#34;
 
@@ -11175,7 +11673,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def publish():
     &#34;&#34;&#34;
 
@@ -11199,7 +11699,9 @@ Gets an array of all Aruco markers in view</p>
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def register_value(addy: int) -&gt; int:
     &#34;&#34;&#34;
     (undocumented)
@@ -11224,7 +11726,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def right_button() -&gt; int:
     &#34;&#34;&#34;
 
@@ -11246,7 +11750,9 @@ Gets an array of all Aruco markers in view</p>
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def seconds() -&gt; int:
     &#34;&#34;&#34;
     (undocumented)
@@ -11282,7 +11788,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def set_a_button_text(text: str):
     &#34;&#34;&#34;
 
@@ -11328,7 +11836,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def set_analog_pullup(port: int, pullup: int):
     &#34;&#34;&#34;
 
@@ -11367,7 +11877,9 @@ Gets an array of all Aruco markers in view</p>
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def set_aruco_marker_size_cm(cm: int):
     &#34;&#34;&#34;
 
@@ -11461,7 +11973,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def set_auto_publish(on: int):
     &#34;&#34;&#34;************************************************************************
 
@@ -11546,7 +12060,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def set_b_button_text(text: str):
     &#34;&#34;&#34;
 
@@ -11579,7 +12095,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def set_c_button_text(text: str):
     &#34;&#34;&#34;
 
@@ -11609,7 +12127,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def set_camera_config_base_path(path: str):
     &#34;&#34;&#34;
 
@@ -11638,7 +12158,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def set_camera_height(height: int):
     &#34;&#34;&#34;
 
@@ -11669,7 +12191,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def set_camera_width(width: int):
     &#34;&#34;&#34;
 
@@ -11704,7 +12228,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def set_chess_board_square_size_cm(cm: int):
     &#34;&#34;&#34;
 
@@ -11755,7 +12281,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def set_compass_params(meanX: float, meanY: float, meanZ: float, W1: float, W2: float, div_E1: float, div_E2: float):
     &#34;&#34;&#34;
 
@@ -11793,7 +12321,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def set_create_baud_rate(baudRate: Any):
     &#34;&#34;&#34;
 
@@ -11811,7 +12341,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def set_create_distance(dist: int):
     &#34;&#34;&#34;
 
@@ -11829,7 +12361,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def set_create_normalized_angle(angle: int):
     &#34;&#34;&#34;
 
@@ -11847,7 +12381,9 @@ See the
 <li>In group: create</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def set_create_total_angle(angle: int):
     &#34;&#34;&#34;
 
@@ -11888,7 +12424,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def set_dictionary(dicionaryId: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -11930,7 +12468,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def set_digital_output(port: int, out: int):
     &#34;&#34;&#34;
 
@@ -11967,7 +12507,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def set_digital_pullup(port: int, pullup: int):
     &#34;&#34;&#34;
 
@@ -11999,7 +12541,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def set_digital_value(port: int, value: int):
     &#34;&#34;&#34;
 
@@ -12030,7 +12574,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def set_extra_buttons_visible(visible: int):
     &#34;&#34;&#34;
 
@@ -12052,7 +12598,9 @@ See the
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def set_low_volt_threshold(volts: float) -&gt; int:
     &#34;&#34;&#34;
     (undocumented)
@@ -12094,7 +12642,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def set_pid_gains(motor: int, p: int, i: int, d: int, pd: int, id: int, dd: int):
     &#34;&#34;&#34;
 
@@ -12126,7 +12676,9 @@ See the
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def set_robot_update_delay(us_delay: int) -&gt; int:
     &#34;&#34;&#34;
     (undocumented)
@@ -12153,7 +12705,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def set_servo_enabled(port: int, enabled: int):
     &#34;&#34;&#34;
 
@@ -12194,7 +12748,9 @@ See the
 <li>In group: servo</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def set_servo_position(port: int, position: int):
     &#34;&#34;&#34;
 
@@ -12234,7 +12790,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def set_x_button_text(text: str):
     &#34;&#34;&#34;
 
@@ -12267,7 +12825,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def set_y_button_text(text: str):
     &#34;&#34;&#34;
 
@@ -12300,7 +12860,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def set_z_button_text(text: str):
     &#34;&#34;&#34;
 
@@ -12335,7 +12897,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def setpwm(motor: int, pwm: int) -&gt; int:
     &#34;&#34;&#34;
 
@@ -12360,7 +12924,9 @@ See the
 <li>Param:[in] s The number of seconds to wait before the end of program</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def shut_down_in(s: int):
     &#34;&#34;&#34;
 
@@ -12392,7 +12958,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def side_button() -&gt; int:
     &#34;&#34;&#34;
 
@@ -12431,7 +12999,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def side_button_clicked() -&gt; int:
     &#34;&#34;&#34;
 
@@ -12457,7 +13027,9 @@ See the
 <dd>
 <section class="desc"><p>(undocumented)</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def systime() -&gt; int:
     &#34;&#34;&#34;
     (undocumented)
@@ -12473,7 +13045,9 @@ See the
 <li>In group: thread</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def thread_create(func: Any) -&gt; Any:
     &#34;&#34;&#34;
 
@@ -12491,7 +13065,9 @@ See the
 <li>In group: thread</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def thread_destroy(id: Any):
     &#34;&#34;&#34;
 
@@ -12509,7 +13085,9 @@ See the
 <li>In group: thread</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def thread_start(id: Any):
     &#34;&#34;&#34;
 
@@ -12527,7 +13105,9 @@ See the
 <li>In group: thread</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def thread_wait(id: Any):
     &#34;&#34;&#34;
 
@@ -12543,7 +13123,9 @@ See the
 <dd>
 <section class="desc"><p>Waits (blocks) until the a button has been pressed.</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def wait_for_a_button():
     &#34;&#34;&#34;
 
@@ -12559,7 +13141,9 @@ See the
 <dd>
 <section class="desc"><p>Waits (blocks) until the a button has been pressed and then subsequently released.</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def wait_for_a_button_clicked():
     &#34;&#34;&#34;
 
@@ -12575,7 +13159,9 @@ See the
 <dd>
 <section class="desc"><p>Waits (blocks) until any system button has been pressed.</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def wait_for_any_button():
     &#34;&#34;&#34;
 
@@ -12591,7 +13177,9 @@ See the
 <dd>
 <section class="desc"><p>Waits (blocks) until the b button has been pressed.</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def wait_for_b_button():
     &#34;&#34;&#34;
 
@@ -12607,7 +13195,9 @@ See the
 <dd>
 <section class="desc"><p>Waits (blocks) until the b button has been pressed and then subsequently released.</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def wait_for_b_button_clicked():
     &#34;&#34;&#34;
 
@@ -12623,7 +13213,9 @@ See the
 <dd>
 <section class="desc"><p>Waits (blocks) until the c button has been pressed.</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def wait_for_c_button():
     &#34;&#34;&#34;
 
@@ -12639,7 +13231,9 @@ See the
 <dd>
 <section class="desc"><p>Waits (blocks) until the c button has been pressed and then subsequently released.</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def wait_for_c_button_clicked():
     &#34;&#34;&#34;
 
@@ -12659,7 +13253,9 @@ See the
 <li>Param:[in] light_port_ The analog port and light sensor to use.</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def wait_for_light(light_port_: int):
     &#34;&#34;&#34;
 
@@ -12682,7 +13278,9 @@ See the
 <li>Param: msecs the number of milliseconds to sleep</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def wait_for_milliseconds(msecs: int):
     &#34;&#34;&#34;
 
@@ -12700,7 +13298,9 @@ See the
 <dd>
 <section class="desc"><p>Waits (blocks) until the side button has been pressed.</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def wait_for_side_button():
     &#34;&#34;&#34;
 
@@ -12716,7 +13316,9 @@ See the
 <dd>
 <section class="desc"><p>Waits (blocks) until the side button has been pressed and then subsequently released.</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def wait_for_side_button_clicked():
     &#34;&#34;&#34;
 
@@ -12735,7 +13337,9 @@ See the
 <li>Param: port The port to wait for activation on</li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def wait_for_touch(port: int):
     &#34;&#34;&#34;
 
@@ -12753,7 +13357,9 @@ See the
 <dd>
 <section class="desc"><p>Waits (blocks) until the x button has been pressed.</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def wait_for_x_button():
     &#34;&#34;&#34;
 
@@ -12769,7 +13375,9 @@ See the
 <dd>
 <section class="desc"><p>Waits (blocks) until the x button has been pressed and then subsequently released.</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def wait_for_x_button_clicked():
     &#34;&#34;&#34;
 
@@ -12785,7 +13393,9 @@ See the
 <dd>
 <section class="desc"><p>Waits (blocks) until the y button has been pressed.</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def wait_for_y_button():
     &#34;&#34;&#34;
 
@@ -12801,7 +13411,9 @@ See the
 <dd>
 <section class="desc"><p>Waits (blocks) until the y button has been pressed and then subsequently released.</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def wait_for_y_button_clicked():
     &#34;&#34;&#34;
 
@@ -12817,7 +13429,9 @@ See the
 <dd>
 <section class="desc"><p>Waits (blocks) until the z button has been pressed.</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def wait_for_z_button():
     &#34;&#34;&#34;
 
@@ -12833,7 +13447,9 @@ See the
 <dd>
 <section class="desc"><p>Waits (blocks) until the z button has been pressed and then subsequently released.</p></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def wait_for_z_button_clicked():
     &#34;&#34;&#34;
 
@@ -12863,7 +13479,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def x_button() -&gt; int:
     &#34;&#34;&#34;
 
@@ -12902,7 +13520,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def x_button_clicked() -&gt; int:
     &#34;&#34;&#34;
 
@@ -12942,7 +13562,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def y_button() -&gt; int:
     &#34;&#34;&#34;
 
@@ -12981,7 +13603,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def y_button_clicked() -&gt; int:
     &#34;&#34;&#34;
 
@@ -13021,7 +13645,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def z_button() -&gt; int:
     &#34;&#34;&#34;
 
@@ -13060,7 +13686,9 @@ See the
 </li>
 </ul></section>
 <details class="source">
-<summary>Source code</summary>
+<summary>
+<span>Expand source code</span>
+</summary>
 <pre><code class="python">def z_button_clicked() -&gt; int:
     &#34;&#34;&#34;
 
@@ -13417,7 +14045,7 @@ See the
 </nav>
 </main>
 <footer id="footer">
-<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.6.3</a>.</p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.7.4</a>.</p>
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad()</script>
