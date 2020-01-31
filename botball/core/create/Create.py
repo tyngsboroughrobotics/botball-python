@@ -1,6 +1,6 @@
-from botball import wallaby
-from ..components import Direction, Motor
-from ..helpers import scale
+from ... import wallaby
+from ..components import Motor
+from ..helpers import Direction, scale
 
 
 # noinspection PyMethodMayBeStatic

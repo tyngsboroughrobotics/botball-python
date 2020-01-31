@@ -1,12 +1,8 @@
-try:
-    from typing import Union, Optional
-except ImportError:
-    pass
-
+from typing import Union, Optional
 import time
-from botball import wallaby
-from .CameraTrackingColor import CameraTrackingColor
-from .Rectangle import Rectangle
+from ... import wallaby
+from . import CameraTrackingColor
+from . import Rectangle
 
 
 class Camera(object):

@@ -1,8 +1,4 @@
-try:
-    from typing import Callable
-except ImportError:
-    pass
-
+from typing import Callable, Dict
 import os
 from ..procedure import Procedure
 
@@ -14,7 +10,7 @@ class RobotConfig(object):
 
     robot_type: str
     """
-    The type of robot targeted. This will either be `"demobot"` or `"create"`.
+    The type of robot targeted.
     """
 
     debug_enabled: bool
@@ -31,28 +27,17 @@ class RobotConfig(object):
 
         The following files will affect the configuration:
 
-        - `/etc/ths-botball-conf/demobot`: If this exists, `robot_type` is set
+        - `/etc/ths-botball-conf/robot_type`: If this exists, `robot_type` is set
         to `"demobot"`.
 
-        - `/etc/ths-botball-conf/create`: If this exists, `robot_type` is set to
-        `"create"`.
-
-            - If both of these are set, `demobot` has precedence.
-
-            - If neither of these are set, a `FileNotFoundError` is raised.
-
-        - `/etc/ths-botball-conf/demobot`: If this exists in addition to one of
-        the above, `debug_enabled` is set to `True`.
+        - `/etc/ths-botball-conf/debug_enabled`: If this exists, `debug_enabled`
+        is set to `True`.
         """
 
-        if os.path.exists(f"{RobotConfig.config_path}/demobot"):
-            self.robot_type = "demobot"
-        elif os.path.exists(f"{RobotConfig.config_path}/demobot"):
-            self.robot_type = "create"
-        else:
-            raise FileNotFoundError("Robot controller not configured as Demobot or Create")
+        with open(f"{self.config_path}/robot_type") as robot_type_file:
+            self.robot_type = robot_type_file.read()
 
-        self.debug_enabled = os.path.exists(f"{RobotConfig.config_path}/debug")
+        self.debug_enabled = os.path.exists(f"{self.config_path}/debug_enabled")
 
     config_path = "/etc/ths-botball-conf"
     """
@@ -61,27 +46,18 @@ class RobotConfig(object):
     """
 
 
-def choose_game_procedure(demobot: Procedure, create: Procedure, **run_args) -> Callable[[], None]:
+def choose_game_procedure(procedure_map: Dict[str, Procedure], **run_args) -> Callable[[], None]:
     """
-    Given two game procedures for a Demobot robot and a iRobot Create robot,
-    returns a function that can be called to execute the appropriate procedure
+    Returns a function that can be called to execute the appropriate procedure
     with the appropriate settings given the current robot configuration.
 
-    - `demobot`: The procedure to execute when running this program on a Demobot
-    robot.
-
-    - `create`: The procedure to execute when running this program on an iRobot
-    Create robot.
+    - `procedure_map`: The map of robot names to procedures.
 
     - `run_args`: Any additional arguments to pass to the `run` function of the
     chosen procedure.
     """
 
     config = RobotConfig()
-
-    if config.type == "demobot":
-        procedure_to_use = demobot
-    else:
-        procedure_to_use = create
+    procedure_to_use = procedure_map[config.robot_type]
 
     return lambda: procedure_to_use.run(debug=config.debug_enabled, **run_args)

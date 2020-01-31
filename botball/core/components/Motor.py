@@ -1,7 +1,6 @@
-from botball import wallaby
-from ..Movable import Movable
-from ..Direction import Direction
-from ...helpers.scale import scale 
+from ... import wallaby
+from . import Movable
+from ..helpers import Direction
 
 
 class Motor(Movable): 

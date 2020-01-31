@@ -1,4 +1,5 @@
-from . import core, wallaby
+from .core import *
+from .wallaby import *
 
 try:
     # Add README to documentation

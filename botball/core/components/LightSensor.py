@@ -1,6 +1,6 @@
 import os
-from botball import wallaby
-from .AnalogSensor import AnalogSensor
+from ... import wallaby
+from . import AnalogSensor
 
 
 class LightSensor(AnalogSensor):

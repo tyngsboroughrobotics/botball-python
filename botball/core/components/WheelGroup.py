@@ -1,6 +1,5 @@
-from botball import wallaby
-from .Motor import Motor
-from ..Direction import Direction
+from ... import wallaby
+from . import Motor, Direction
 
 
 class WheelGroup(object):

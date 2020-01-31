@@ -1,4 +1,4 @@
-from ..helpers.enum import Enum
+from enum import Enum
 
 
 class Direction(Enum):

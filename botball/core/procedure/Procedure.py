@@ -1,11 +1,7 @@
-try:
-    from typing import List, Optional
-except ImportError:
-    pass
-
-from botball import wallaby
+from typing import List, Optional
 from datetime import datetime
-from .Step import Step
+from ... import wallaby
+from . import Step
 
 
 class Procedure(object):

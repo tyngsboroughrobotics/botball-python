@@ -1,4 +1,13 @@
-from .devices import camera, Motor, Servo, WheelGroup
-from .Component import Component
-from .Direction import Direction
-from .Movable import Movable
+from .AnalogSensor import *
+from .Camera import *
+from .CameraTrackingColor import *
+from .Component import *
+from .DigitalSensor import *
+from .Component import *
+from .DigitalSensor import *
+from .LightSensor import *
+from .Motor import *
+from .Movable import *
+from .Rectangle import *
+from .Servo import *
+from .WheelGroup import *

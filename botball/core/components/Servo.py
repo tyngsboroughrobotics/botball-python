@@ -1,6 +1,6 @@
-from botball import wallaby
-from ..Component import Component
-from ...helpers.scale import scale 
+from ... import wallaby
+from . import Component
+from ..helpers import scale
 
 
 class Servo(Component):

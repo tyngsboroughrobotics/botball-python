@@ -1,5 +1,5 @@
-from botball import wallaby
-from ..Component import Component
+from ... import wallaby
+from . import Component
 
 
 class DigitalSensor(Component):
