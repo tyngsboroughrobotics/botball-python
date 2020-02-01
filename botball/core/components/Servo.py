@@ -1,5 +1,5 @@
 from ... import wallaby
-from . import Component
+from .Component import Component
 from ..helpers import scale
 
 

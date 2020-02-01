@@ -1,6 +1,6 @@
 import os
 from ... import wallaby
-from . import AnalogSensor
+from .AnalogSensor import AnalogSensor
 
 
 class LightSensor(AnalogSensor):

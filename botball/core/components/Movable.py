@@ -1,4 +1,4 @@
-from . import Component
+from .Component import Component
 
 
 class Movable(Component):

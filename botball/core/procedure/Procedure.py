@@ -1,7 +1,7 @@
 from typing import List, Optional
 from datetime import datetime
 from ... import wallaby
-from . import Step
+from .Step import Step
 
 
 class Procedure(object):

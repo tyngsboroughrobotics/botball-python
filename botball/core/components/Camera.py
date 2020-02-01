@@ -1,8 +1,8 @@
 from typing import Union, Optional
 import time
 from ... import wallaby
-from . import CameraTrackingColor
-from . import Rectangle
+from .CameraTrackingColor import CameraTrackingColor
+from .Rectangle import Rectangle
 
 
 class Camera(object):

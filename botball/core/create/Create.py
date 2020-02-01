@@ -1,6 +1,6 @@
-from ... import wallaby
 from ..components import Motor
 from ..helpers import Direction, scale
+from ... import wallaby
 
 
 # noinspection PyMethodMayBeStatic

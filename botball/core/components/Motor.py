@@ -1,5 +1,5 @@
 from ... import wallaby
-from . import Movable
+from .Movable import Movable
 from ..helpers import Direction
 
 
