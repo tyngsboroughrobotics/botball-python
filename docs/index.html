@@ -66,7 +66,18 @@
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">from . import core, wallaby
+<pre><code class="python">try:
+    from ctypes import cdll
+    bindings = cdll.LoadLibrary(&#34;/usr/lib/libwallaby.so&#34;)
+except:
+    print(&#34;WARNING: Could not load libwallaby.so. This is OK if you&#39;re \
+generating documentation but is bad if you&#39;re running on the robot.&#34;)
+    bindings = None
+
+from .components import *
+from .create import *
+from .helpers import *
+from .procedure import *
 
 try:
     # Add README to documentation
@@ -80,11 +91,19 @@ except FileNotFoundError:
 <section>
 <h2 class="section-title" id="header-submodules">Sub-modules</h2>
 <dl>
-<dt><code class="name"><a title="botball.core" href="core/index.html">botball.core</a></code></dt>
+<dt><code class="name"><a title="botball.components" href="components/index.html">botball.components</a></code></dt>
 <dd>
 <section class="desc"></section>
 </dd>
-<dt><code class="name"><a title="botball.wallaby" href="wallaby/index.html">botball.wallaby</a></code></dt>
+<dt><code class="name"><a title="botball.create" href="create/index.html">botball.create</a></code></dt>
+<dd>
+<section class="desc"></section>
+</dd>
+<dt><code class="name"><a title="botball.helpers" href="helpers/index.html">botball.helpers</a></code></dt>
+<dd>
+<section class="desc"></section>
+</dd>
+<dt><code class="name"><a title="botball.procedure" href="procedure/index.html">botball.procedure</a></code></dt>
 <dd>
 <section class="desc"></section>
 </dd>
@@ -122,8 +141,10 @@ except FileNotFoundError:
 <ul id="index">
 <li><h3><a href="#header-submodules">Sub-modules</a></h3>
 <ul>
-<li><code><a title="botball.core" href="core/index.html">botball.core</a></code></li>
-<li><code><a title="botball.wallaby" href="wallaby/index.html">botball.wallaby</a></code></li>
+<li><code><a title="botball.components" href="components/index.html">botball.components</a></code></li>
+<li><code><a title="botball.create" href="create/index.html">botball.create</a></code></li>
+<li><code><a title="botball.helpers" href="helpers/index.html">botball.helpers</a></code></li>
+<li><code><a title="botball.procedure" href="procedure/index.html">botball.procedure</a></code></li>
 </ul>
 </li>
 </ul>

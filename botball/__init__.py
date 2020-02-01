@@ -1,5 +1,15 @@
-from .core import *
-from .wallaby import *
+try:
+    from ctypes import cdll
+    bindings = cdll.LoadLibrary("/usr/lib/libwallaby.so")
+except:
+    print("WARNING: Could not load libwallaby.so. This is OK if you're \
+generating documentation but is bad if you're running on the robot.")
+    bindings = None
+
+from .components import *
+from .create import *
+from .helpers import *
+from .procedure import *
 
 try:
     # Add README to documentation
