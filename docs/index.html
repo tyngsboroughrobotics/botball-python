@@ -72,7 +72,7 @@
 except:
     print(&#34;WARNING: Could not load libwallaby.so. This is OK if you&#39;re \
 generating documentation but is bad if you&#39;re running on the robot.&#34;)
-    bindings = None
+    from . import bindings_stubs as bindings
 
 from .components import *
 from .create import *
@@ -91,6 +91,10 @@ except FileNotFoundError:
 <section>
 <h2 class="section-title" id="header-submodules">Sub-modules</h2>
 <dl>
+<dt><code class="name"><a title="botball.bindings_stubs" href="bindings_stubs.html">botball.bindings_stubs</a></code></dt>
+<dd>
+<section class="desc"></section>
+</dd>
 <dt><code class="name"><a title="botball.components" href="components/index.html">botball.components</a></code></dt>
 <dd>
 <section class="desc"></section>
@@ -141,6 +145,7 @@ except FileNotFoundError:
 <ul id="index">
 <li><h3><a href="#header-submodules">Sub-modules</a></h3>
 <ul>
+<li><code><a title="botball.bindings_stubs" href="bindings_stubs.html">botball.bindings_stubs</a></code></li>
 <li><code><a title="botball.components" href="components/index.html">botball.components</a></code></li>
 <li><code><a title="botball.create" href="create/index.html">botball.create</a></code></li>
 <li><code><a title="botball.helpers" href="helpers/index.html">botball.helpers</a></code></li>

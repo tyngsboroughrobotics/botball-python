@@ -4,7 +4,7 @@ try:
 except:
     print("WARNING: Could not load libwallaby.so. This is OK if you're \
 generating documentation but is bad if you're running on the robot.")
-    bindings = None
+    from . import bindings_stubs as bindings
 
 from .components import *
 from .create import *
