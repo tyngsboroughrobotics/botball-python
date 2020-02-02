@@ -1,3 +1,4 @@
+import time
 from .. import bindings
 from .Component import Component
 from ..helpers import scale
@@ -39,7 +40,7 @@ class Servo(Component):
         bindings.set_servo_position(self.port, bounded_position)
         
         # Wait for the servo to finish
-        bindings.msleep(int(100 + abs(self._position - bounded_position) * self.ms_per_tick))
+        time.sleep(self.servo_sleep_amount)
 
         self._position = bounded_position
 
@@ -73,9 +74,10 @@ class Servo(Component):
     components.)
     """
 
-    ms_per_tick: float = 1.6
+    servo_sleep_amount = 0.75
     """
-    The number of milliseconds it takes for the servo to move one tick.
+    The number of seconds to sleep between servo movements. Setting this to 0
+    causes the `Servo.set_position_to` method to return immediately.
 
     If this value is inaccurate for your robot, you can change it. Do so as
     early in your program as possible (eg. before you create/initialize any

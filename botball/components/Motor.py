@@ -44,7 +44,7 @@ class Motor(Movable):
 
     # - Constants
 
-    default_sleep_time: int = 300 
+    default_sleep_time: int = 0
     """
     The amount of time (in milliseconds) to allow the motors to sleep for in 
     between movements. This allows the motor a bit of time to stop moving before

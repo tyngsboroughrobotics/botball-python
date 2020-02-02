@@ -24,7 +24,8 @@
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">from .. import bindings
+<pre><code class="python">import time
+from .. import bindings
 from .Component import Component
 from ..helpers import scale
 
@@ -65,7 +66,7 @@ class Servo(Component):
         bindings.set_servo_position(self.port, bounded_position)
         
         # Wait for the servo to finish
-        bindings.msleep(int(100 + abs(self._position - bounded_position) * self.ms_per_tick))
+        time.sleep(self.servo_sleep_amount)
 
         self._position = bounded_position
 
@@ -99,9 +100,10 @@ class Servo(Component):
     components.)
     &#34;&#34;&#34;
 
-    ms_per_tick: float = 1.6
+    servo_sleep_amount = 0.75
     &#34;&#34;&#34;
-    The number of milliseconds it takes for the servo to move one tick.
+    The number of seconds to sleep between servo movements. Setting this to 0
+    causes the `Servo.set_position_to` method to return immediately.
 
     If this value is inaccurate for your robot, you can change it. Do so as
     early in your program as possible (eg. before you create/initialize any
@@ -164,7 +166,7 @@ class Servo(Component):
         bindings.set_servo_position(self.port, bounded_position)
         
         # Wait for the servo to finish
-        bindings.msleep(int(100 + abs(self._position - bounded_position) * self.ms_per_tick))
+        time.sleep(self.servo_sleep_amount)
 
         self._position = bounded_position
 
@@ -198,9 +200,10 @@ class Servo(Component):
     components.)
     &#34;&#34;&#34;
 
-    ms_per_tick: float = 1.6
+    servo_sleep_amount = 0.75
     &#34;&#34;&#34;
-    The number of milliseconds it takes for the servo to move one tick.
+    The number of seconds to sleep between servo movements. Setting this to 0
+    causes the `Servo.set_position_to` method to return immediately.
 
     If this value is inaccurate for your robot, you can change it. Do so as
     early in your program as possible (eg. before you create/initialize any
@@ -227,9 +230,10 @@ components.)</p></section>
 early in your program as possible (eg. before you create/initialize any
 components.)</p></section>
 </dd>
-<dt id="botball.components.Servo.Servo.ms_per_tick"><code class="name">var <span class="ident">ms_per_tick</span></code></dt>
+<dt id="botball.components.Servo.Servo.servo_sleep_amount"><code class="name">var <span class="ident">servo_sleep_amount</span></code></dt>
 <dd>
-<section class="desc"><p>The number of milliseconds it takes for the servo to move one tick.</p>
+<section class="desc"><p>The number of seconds to sleep between servo movements. Setting this to 0
+causes the <a title="botball.components.Servo.Servo.set_position_to" href="#botball.components.Servo.Servo.set_position_to"><code>Servo.set_position_to()</code></a> method to return immediately.</p>
 <p>If this value is inaccurate for your robot, you can change it. Do so as
 early in your program as possible (eg. before you create/initialize any
 components.)</p></section>
@@ -318,7 +322,7 @@ components.)</p></section>
     bindings.set_servo_position(self.port, bounded_position)
     
     # Wait for the servo to finish
-    bindings.msleep(int(100 + abs(self._position - bounded_position) * self.ms_per_tick))
+    time.sleep(self.servo_sleep_amount)
 
     self._position = bounded_position
 
@@ -350,8 +354,8 @@ components.)</p></section>
 <li><code><a title="botball.components.Servo.Servo.enable" href="#botball.components.Servo.Servo.enable">enable</a></code></li>
 <li><code><a title="botball.components.Servo.Servo.max_position" href="#botball.components.Servo.Servo.max_position">max_position</a></code></li>
 <li><code><a title="botball.components.Servo.Servo.min_position" href="#botball.components.Servo.Servo.min_position">min_position</a></code></li>
-<li><code><a title="botball.components.Servo.Servo.ms_per_tick" href="#botball.components.Servo.Servo.ms_per_tick">ms_per_tick</a></code></li>
 <li><code><a title="botball.components.Servo.Servo.position" href="#botball.components.Servo.Servo.position">position</a></code></li>
+<li><code><a title="botball.components.Servo.Servo.servo_sleep_amount" href="#botball.components.Servo.Servo.servo_sleep_amount">servo_sleep_amount</a></code></li>
 <li><code><a title="botball.components.Servo.Servo.set_position_to" href="#botball.components.Servo.Servo.set_position_to">set_position_to</a></code></li>
 </ul>
 </li>
