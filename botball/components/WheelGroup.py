@@ -61,11 +61,17 @@ class WheelGroup(object):
         right_distance_offset = right_distance
 
         if offset:
-            left_motor.speed *= self.left_offset
-            right_motor.speed = self.right_offset
+            # Reverse the offsets if both wheels are traveling backward
+            if left_direction == right_direction and left_direction == Direction.Backward:
+                (left_offset, right_offset) = (self.right_offset, self.left_offset)
+            else:
+                (left_offset, right_offset) = (self.left_offset, self.right_offset)
 
-            left_distance_offset *= self.left_offset
-            right_distance_offset *= self.right_offset
+            left_motor.speed *= left_offset
+            right_motor.speed = right_offset
+
+            left_distance_offset *= left_offset
+            right_distance_offset *= right_offset
 
         left_motor.move(left_direction, mm=left_distance_offset, block=False, sleep=False)
         right_motor.move(right_direction, mm=right_distance_offset, block=block, sleep=False)
