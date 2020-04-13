@@ -1,3 +1,5 @@
+# NEW LOCATION: See https://github.com/tyngsboroughrobotics/game2020/tree/master/botball
+
 # Botball for Python
 
 Botball for Python provides Python wrappers for several useful Botball components (including motors, servos, sensors and wheels), as well as access to the entire `libwallaby` C library so it can interoperate with existing projects. Botball for Python is designed for Python 3.6 and is fully typed and documented.
